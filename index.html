@@ -492,6 +492,73 @@
       transform: scale(0.95);
     }
 
+    /* MAP CONTAINER */
+    .map-container {
+      margin-top: 15px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid var(--gold-light);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      display: block;
+    }
+
+    .map-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10, 92, 74, 0.1);
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: var(--emerald-dark);
+      font-weight: 500;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .map-label i {
+      color: var(--emerald);
+      font-size: 1rem;
+    }
+
+    .map-actions {
+      display: flex;
+      gap: 8px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .map-btn {
+      flex: 1;
+      padding: 10px 8px;
+      border-radius: 12px;
+      border: 1px solid var(--gold-light);
+      background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
+      color: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .map-btn:active {
+      transform: scale(0.95);
+    }
+
+    .map-btn i {
+      font-size: 0.9rem;
+    }
+
     .bottom-nav {
       background: #f7f1e3;
       backdrop-filter: blur(20px);
@@ -751,6 +818,9 @@
         min-width: 48px;
         padding: 6px 4px;
       }
+      .map-container iframe {
+        height: 200px;
+      }
     }
 
     @media (min-width: 431px) {
@@ -894,6 +964,31 @@
         <div style="text-align: center;">
           <button class="btn-luxe" id="saveDateBtn"><i class="fas fa-calendar-check"></i> Simpan Tanggal</button>
         </div>
+
+        <!-- GOOGLE MAP -->
+        <div class="map-container">
+          <div class="map-label">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Lokasi Acara - Desa Sari Makmur, Sp6, Jalur9</span>
+          </div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3039.116381205891!2d102.14058517349407!3d-0.08107343549326532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMDQnNTEuNCJTIDEwMsKwMDgnMzguMCJF!5e1!3m2!1sid!2sid!4v1788196867335!5m2!1sid!2sid"  
+            width="100%" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <div class="map-actions">
+            <a href="https://maps.app.goo.gl/DRwcJqwAx1bNrY6c7" target="_blank" class="map-btn">
+              <i class="fas fa-directions"></i> Petunjuk Arah
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sari+Makmur+Jalur9" target="_blank" class="map-btn">
+              <i class="fas fa-external-link-alt"></i> Buka di Maps
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- GALERI -->
@@ -932,13 +1027,13 @@
         <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.5rem;">Ucapan & Doa</h2>
         <div class="islamic-divider"><i class="fas fa-comment-dots"></i></div>
         <div class="ucapan-item">
-          <strong>Gus Pirjon</strong> "Barakallahu lakuma wa baraka 'alaikuma. Selamat menempuh hidup baru."
+          <strong>Bunda Ratna</strong> "Barakallahu lakuma wa baraka 'alaikuma. Selamat menempuh hidup baru."
         </div>
         <div class="ucapan-item">
-          <strong>Cak Imin (Suwandi)</strong> "Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin."
+          <strong>Kakak Aldi</strong> "Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin."
         </div>
         <div class="ucapan-item">
-          <strong>Paigus</strong> "Akhirnya halal! Bahagia selalu Sumandiyah & Suheri."
+          <strong>Teman Kampus</strong> "Akhirnya halal! Bahagia selalu Sumandiyah & Suheri."
         </div>
         <div style="margin-top: 15px;">
           <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius: 14px; border:1px solid #cbdbbe; background:#fffdf7; font-family: 'Jost', sans-serif; font-size: 0.9rem; transition: all 0.3s; resize: none;"></textarea>
@@ -1001,7 +1096,6 @@
       const musicIcon = document.getElementById('musicIcon');
       let isMusicPlaying = false;
 
-      // Fungsi untuk mencoba autoplay
       function tryAutoPlay() {
         bgMusic.volume = 0.5;
         bgMusic.play().then(() => {
@@ -1009,24 +1103,20 @@
           musicToggle.classList.add('playing');
           musicIcon.className = 'fas fa-music';
         }).catch(err => {
-          // Autoplay diblokir, tunggu interaksi pengguna
           console.log('Autoplay diblokir, menunggu interaksi pengguna');
         });
       }
 
-      // Coba autoplay saat halaman dimuat
       window.addEventListener('DOMContentLoaded', function() {
         tryAutoPlay();
       });
 
-      // Coba autoplay saat halaman selesai dimuat
       window.addEventListener('load', function() {
         if (!isMusicPlaying) {
           tryAutoPlay();
         }
       });
 
-      // Coba autoplay saat pengguna pertama kali menyentuh/klik layar
       function handleFirstInteraction() {
         if (!isMusicPlaying) {
           tryAutoPlay();
