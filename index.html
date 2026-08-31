@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0a5c4a">
   <title>Undangan Pernikahan Islami · Sumandiyah & Suheri</title>
   <!-- Font & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Jost:wght@300;400;500;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Jost:wght@300;400;500;600&family=Scheherazade+New:wght@400;700&family=Reem+Kufi:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -30,10 +30,6 @@
       --charcoal: #2c2b26;
       --shadow: 0 25px 45px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.1);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
-    }
-
-    * {
-      -webkit-tap-highlight-color: transparent;
     }
 
     html, body {
@@ -61,7 +57,6 @@
       width: 100dvw;
     }
 
-    /* Canvas untuk partikel emas */
     #particleCanvas {
       position: fixed;
       top: 0;
@@ -90,7 +85,6 @@
       border-radius: 0;
     }
 
-    /* Overlay pembuka */
     .welcome-overlay {
       position: absolute;
       top: 0;
@@ -278,6 +272,30 @@
       letter-spacing: 1px;
     }
 
+    /* Tulisan Arab Bismillah */
+    .bismillah-arab {
+      font-family: 'Reem Kufi', 'Amiri', 'Scheherazade New', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--deep-teal);
+      text-align: center;
+      margin-bottom: 4px;
+      direction: rtl;
+      text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+      animation: fadeInUp 0.8s ease;
+      letter-spacing: 0;
+      line-height: 1.5;
+    }
+
+    .bismillah-latin {
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      color: var(--emerald);
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
     .card-luxe {
       background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(10px);
@@ -461,18 +479,58 @@
     }
 
     .profile-pic {
-      width: 80px;
-      height: 80px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--emerald);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      margin: 0 auto 10px;
+      border: 4px solid var(--emerald);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 0 20px rgba(212, 175, 55, 0.3);
+      margin: 0 auto 12px;
       transition: all 0.4s ease;
       cursor: pointer;
+      display: block;
     }
     .profile-pic:active {
-      transform: scale(0.9);
+      transform: scale(0.95);
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 28px;
+      padding: 20px 14px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      text-align: center;
+      margin: 10px 0;
+      transition: all 0.4s ease;
+    }
+
+    .profile-card:active {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    }
+
+    .profile-name {
+      font-family: 'Amiri', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--deep-teal);
+      margin-bottom: 4px;
+    }
+
+    .profile-parent {
+      font-size: 0.9rem;
+      color: #665a45;
+      margin-top: 4px;
+    }
+
+    .profile-divider-emoji {
+      font-size: 2.5rem;
+      color: var(--gold);
+      text-align: center;
+      margin: 8px 0;
+      animation: pulse 2s ease-in-out infinite;
     }
 
     .bank-box {
@@ -558,7 +616,6 @@
       100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
     }
 
-    /* Responsif untuk layar kecil */
     @media (max-width: 360px) {
       .cover-name {
         font-size: 1.3rem;
@@ -576,6 +633,13 @@
       .nav-item {
         font-size: 0.55rem;
       }
+      .profile-pic {
+        width: 110px;
+        height: 110px;
+      }
+      .bismillah-arab {
+        font-size: 1.3rem;
+      }
     }
 
     @media (min-width: 431px) {
@@ -586,6 +650,10 @@
       }
       .bottom-nav {
         border-radius: 0 0 40px 40px;
+      }
+      .profile-pic {
+        width: 160px;
+        height: 160px;
       }
     }
   </style>
@@ -615,7 +683,13 @@
       <div class="page active" id="homePage">
         <div class="card-luxe" style="text-align: center; margin-top: 10px;">
           <div class="ornament-top">۞</div>
-          <div style="font-size: 1rem; letter-spacing: 3px; color: var(--emerald);">BISMILLAHIRRAHMANIRRAHIM</div>
+          
+          <!-- Tulisan Arab Bismillah -->
+          <div class="bismillah-arab">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          
+          <!-- Tulisan Latin Bismillah -->
+          <div class="bismillah-latin">BISMILLAHIRRAHMANIRRAHIM</div>
+          
           <div class="islamic-divider">۞</div>
           <div class="cover-name-container">
             <span class="cover-name">Sumandiyah</span>
@@ -630,20 +704,25 @@
         <div style="text-align:center; margin-top: 15px; color: var(--gold);">۞ ✦ ۞</div>
       </div>
 
-      <!-- PROFIL -->
+      <!-- PROFIL - FOTO LEBIH BESAR -->
       <div class="page" id="profilePage">
-        <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.5rem;">Mempelai</h2>
+        <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.6rem;">Mempelai</h2>
         <div class="islamic-divider"><i class="fas fa-mosque"></i></div>
-        <div style="text-align: center;">
+        
+        <!-- Profil Sumandiyah -->
+        <div class="profile-card">
           <img src="20250428_080349.jpg" alt="Sumandiyah" class="profile-pic" id="profilePic1">
-          <h3 class="serif-islamic" style="font-size: 1.6rem;">Sumandiyah</h3>
-          <p style="font-size: 0.85rem; color: #665a45;">Putri dari Bpk. Ahmad & Ibu Fatimah</p>
+          <div class="profile-name">Sumandiyah</div>
+          <div class="profile-parent">Putri dari Bpk. Ahmad & Ibu Fatimah</div>
         </div>
-        <div style="margin: 18px 0; text-align: center; font-size: 1.5rem; color: var(--emerald);">۞</div>
-        <div style="text-align: center;">
+        
+        <div class="profile-divider-emoji">۞</div>
+        
+        <!-- Profil Suheri -->
+        <div class="profile-card">
           <img src="MOOC.png" alt="Suheri" class="profile-pic" id="profilePic2">
-          <h3 class="serif-islamic" style="font-size: 1.6rem;">Suheri</h3>
-          <p style="font-size: 0.85rem; color: #665a45;">Putra dari Bpk. Umar & Ibu Khadijah</p>
+          <div class="profile-name">Suheri</div>
+          <div class="profile-parent">Putra dari Bpk. Umar & Ibu Khadijah</div>
         </div>
       </div>
 
@@ -656,7 +735,7 @@
             <i class="fas fa-hands" style="font-size: 1.5rem; color: var(--emerald);"></i>
             <div>
               <h4 style="font-family: 'Amiri', serif; font-weight: bold; font-size: 1.1rem;">Akad Nikah</h4>
-              <p style="font-size: 0.85rem;">Sabtu, 12 Desember 2026<br>Pukul 09.00 WIB<br>Masjid Agung Al-Ikhlas</p>
+              <p style="font-size: 0.85rem;">Minggu, 20 Desember 2026<br>Pukul 09.00 WIB<br>Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</p>
             </div>
           </div>
         </div>
@@ -665,7 +744,7 @@
             <i class="fas fa-utensils" style="font-size: 1.5rem; color: var(--emerald);"></i>
             <div>
               <h4 style="font-family: 'Amiri', serif; font-weight: bold; font-size: 1.1rem;">Resepsi</h4>
-              <p style="font-size: 0.85rem;">Minggu, 13 Desember 2026<br>Pukul 11.00 - 14.00 WIB<br>Gedung Islamic Center</p>
+              <p style="font-size: 0.85rem;">Minggu, 20 Desember 2026<br>Pukul 11.00 - 14.00 WIB<br>Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</p>
             </div>
           </div>
         </div>
@@ -787,7 +866,7 @@
       if (openBtn) {
         openBtn.addEventListener('click', function() {
           showPage('profilePage');
-          showToast('👰🤵 Mari berkenalan dengan mempelai');
+          showToast('🧕👳‍♂️ Mari berkenalan dengan mempelai');
         });
       }
 
@@ -849,7 +928,13 @@
       profilePics.forEach(pic => {
         pic.addEventListener('click', function() {
           const name = this.alt || 'Mempelai';
-          showToast('💕 ' + name);
+          if (name === 'Sumandiyah') {
+            showToast('🧕 Sumandiyah - Wanita Berhijab');
+          } else if (name === 'Suheri') {
+            showToast('👳‍♂️ Suheri - Pria Berpeci');
+          } else {
+            showToast('💕 ' + name);
+          }
         });
       });
 
@@ -858,7 +943,7 @@
       if (welcomePhoto) {
         welcomePhoto.addEventListener('click', function(e) {
           e.stopPropagation();
-          showToast('💑 Sumandiyah & Suheri');
+          showToast('🧕👳‍♂️ Sumandiyah & Suheri');
         });
       }
 
