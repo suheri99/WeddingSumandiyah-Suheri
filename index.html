@@ -132,7 +132,7 @@
       cursor: pointer;
       transition: opacity 0.8s ease, transform 0.8s ease;
       opacity: 1;
-      padding: 10px;
+      padding: 12px;
       border: none;
       overflow-y: auto;
     }
@@ -144,37 +144,27 @@
     }
 
     .welcome-icon {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: var(--gold-dark);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       animation: pulse 2s ease-in-out infinite;
       text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     }
 
-    /* FOTO PEMBUKA - BESAR */
     .welcome-photo-container {
-      width: 280px;
-      height: 280px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       overflow: hidden;
-      border: 5px solid var(--gold);
-      box-shadow: 0 0 50px rgba(212, 175, 55, 0.7), 0 20px 45px rgba(0, 0, 0, 0.25);
-      margin-bottom: 18px;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.6), 0 15px 35px rgba(0, 0, 0, 0.2);
+      margin-bottom: 15px;
       animation: fadeInUp 1s ease;
       cursor: pointer;
-      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: all 0.4s ease;
       position: relative;
       background: #fff;
       flex-shrink: 0;
-    }
-
-    .welcome-photo-container:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 60px rgba(212, 175, 55, 0.9), 0 25px 55px rgba(0, 0, 0, 0.35);
-    }
-
-    .welcome-photo-container:active {
-      transform: scale(0.95);
     }
 
     .welcome-photo {
@@ -212,23 +202,23 @@
     }
 
     .countdown-container {
-      margin: 10px 0 6px;
+      margin: 12px 0 8px;
       text-align: center;
       animation: fadeInUp 1.2s ease;
     }
 
     .countdown-label {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: #8b7a5a;
       letter-spacing: 2px;
       font-weight: 500;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       text-transform: uppercase;
     }
 
     .countdown-timer {
       display: flex;
-      gap: 6px;
+      gap: 8px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
@@ -238,8 +228,8 @@
       background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 12px;
-      padding: 5px 4px;
-      min-width: 46px;
+      padding: 6px 4px;
+      min-width: 50px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       backdrop-filter: blur(5px);
@@ -252,7 +242,7 @@
 
     .countdown-number {
       font-family: 'Jost', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--emerald);
       line-height: 1;
@@ -260,7 +250,7 @@
     }
 
     .countdown-unit {
-      font-size: 0.5rem;
+      font-size: 0.55rem;
       color: #8b7a5a;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -270,16 +260,16 @@
     }
 
     .countdown-colon {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--gold-dark);
       animation: pulse 1s ease-in-out infinite;
     }
 
     .welcome-sub {
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       color: #8b7a5a;
-      margin-top: 6px;
+      margin-top: 8px;
       letter-spacing: 3px;
       animation: fadeInOut 2s ease-in-out infinite;
       font-weight: 500;
@@ -649,14 +639,14 @@
     }
 
     @media (max-width: 360px) {
-      .welcome-photo-container { width: 220px; height: 220px; }
+      .welcome-photo-container { width: 160px; height: 160px; }
       .profile-pic { width: 110px; height: 110px; }
       .guest-name-display { font-size: 1.3rem; }
     }
 
     @media (min-width: 431px) {
       .phone-frame { border-radius: 40px; height: 85vh; max-height: 850px; }
-      .welcome-photo-container { width: 320px; height: 320px; }
+      .welcome-photo-container { width: 230px; height: 230px; }
     }
   </style>
 </head>
@@ -671,7 +661,7 @@
     <div class="welcome-overlay" id="welcomeOverlay">
       <div class="welcome-icon">🕌</div>
       <div class="welcome-photo-container">
-        <img src="https://i.pravatar.cc/800?img=32" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
+        <img src="Adat Jawa 3.png" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
       </div>
       <div class="welcome-text">
         <span class="welcome-name">Sumandiyah</span>
@@ -709,7 +699,7 @@
       <!-- HOME -->
       <div class="page active" id="homePage">
         <div class="card-luxe" style="text-align: center; margin-top: 10px;">
-          <div style="font-size:1.5rem; color:var(--gold);">۞</div>
+          <div style="font-size:1.5rem; color:var(--gold); animation:shimmer 3s infinite;">۞</div>
           <div style="font-family:'Reem Kufi',serif; font-size:1.6rem; direction:rtl; color:var(--deep-teal);">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
           <div style="font-size:0.95rem; letter-spacing:2px; color:var(--emerald);">BISMILLAHIRRAHMANIRRAHIM</div>
           <div class="islamic-divider">۞</div>
@@ -733,15 +723,15 @@
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.6rem;">Mempelai</h2>
         <div class="islamic-divider"><i class="fas fa-mosque"></i></div>
         <div class="profile-card" onclick="showToast('💚 Sumandiyah - Mempelai Wanita')">
-          <img src="https://i.pravatar.cc/400?img=44" alt="Sumandiyah" class="profile-pic">
-          <div class="profile-name">Sumandiyah</div>
-          <div style="color:#665a45;">Putri dari Bpk. Ahmad & Ibu Fatimah</div>
+          <img src="20250428_080349.jpg" alt="Sumandiyah" class="profile-pic" id="profilePic1">
+          <div class="profile-name">Sumandiyah, S.Pd.Gr.</div>
+          <div style="color:#665a45;">Putri dari Anak Pertama Bapak Purwanto (Almarhum) & Ibu Erniyati</div>
         </div>
         <div style="font-size:2rem; color:var(--gold); text-align:center; cursor:pointer;" onclick="showToast('💛 Cinta menyatukan mereka')">۞</div>
         <div class="profile-card" onclick="showToast('💚 Suheri - Mempelai Pria')">
-          <img src="https://i.pravatar.cc/400?img=33" alt="Suheri" class="profile-pic">
-          <div class="profile-name">Suheri</div>
-          <div style="color:#665a45;">Putra dari Bpk. Umar & Ibu Khadijah</div>
+          <img src="MOOC.png" alt="Suheri" class="profile-pic" id="profilePic2">
+          <div class="profile-name">Suheri, S.Pd.Gr.</div>
+          <div style="color:#665a45;">Putra dari anak Pertama Bapak Hamsar (Almarhum) & Ibu Sapurah</div>
         </div>
       </div>
 
@@ -754,7 +744,7 @@
             <i class="fas fa-hands" style="font-size:1.5rem; color:var(--emerald);"></i>
             <div>
               <h4 style="font-family:'Amiri',serif; font-size:1.1rem;">Akad Nikah</h4>
-              <p style="font-size:0.85rem;">Minggu, 20 Desember 2026<br>Pukul 09.00 WIB<br>Masjid Agung Al-Ikhlas</p>
+              <p style="font-size:0.85rem;">Minggu, 20 Desember 2026<br>Pukul 09.00 WIB<br>Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</p>
             </div>
           </div>
         </div>
@@ -763,21 +753,21 @@
             <i class="fas fa-utensils" style="font-size:1.5rem; color:var(--emerald);"></i>
             <div>
               <h4 style="font-family:'Amiri',serif; font-size:1.1rem;">Resepsi</h4>
-              <p style="font-size:0.85rem;">Minggu, 20 Desember 2026<br>Pukul 11.00 - 14.00 WIB<br>Gedung Islamic Center</p>
+              <p style="font-size:0.85rem;">Minggu, 20 Desember 2026<br>Pukul 11.00 - 14.00 WIB<br>Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</p>
             </div>
           </div>
         </div>
         <button class="btn-luxe" id="saveDateBtn" style="margin-bottom:15px;"><i class="fas fa-calendar-check"></i> Simpan Tanggal</button>
         <div class="map-container" onclick="showToast('🗺️ Buka Google Maps untuk navigasi')">
           <div style="display:flex; align-items:center; gap:8px; background:rgba(10,92,74,0.1); padding:10px 14px; font-size:0.85rem; color:var(--emerald-dark);">
-            <i class="fas fa-map-marker-alt"></i> Lokasi Acara
+            <i class="fas fa-map-marker-alt"></i>Lokasi Acara - Desa Sari Makmur, Sp6, Jalur9
           </div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890!2d106.1234567890!3d-6.1234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDcnMjQuNCJTIDEwNsKwMDcnMjQuNCJF!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2489.1425764600713!2d102.14956567850979!3d-0.0812150723408031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1788247065851!5m2!1sid!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           <div style="display:flex; gap:8px; padding:10px 14px; background:rgba(255,255,255,0.8);">
-            <a href="https://www.google.com/maps/search/?api=1&query=-6.1234567890,106.1234567890" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <a href="https://maps.app.goo.gl/L7EqC5Avj5oUA4jf7" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
               <i class="fas fa-directions"></i> Petunjuk Arah
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Ikhlas" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Jalur9No.2+SariMakmur+Kec.Pangkalanlesung" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
               <i class="fas fa-external-link-alt"></i> Buka di Maps
             </a>
           </div>
@@ -789,10 +779,11 @@
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Galeri Bahagia</h2>
         <div class="islamic-divider"><i class="fas fa-camera"></i></div>
         <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px;">
-          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Momen bahagia Sumandiyah & Suheri')"><img src="https://i.pravatar.cc/300?img=47" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Kenangan manis bersama')"><img src="https://i.pravatar.cc/300?img=24" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Senyum kebahagiaan')"><img src="https://i.pravatar.cc/300?img=7" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari bahagia')"><img src="https://i.pravatar.cc/300?img=56" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" data-caption="Momen bahagia Sumandiyah & Suheri" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Momen bahagia Sumandiyah & Suheri')"><img src="20260718_213732.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" data-caption="Kenangan manis bersama" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Kenangan manis bersama')"><img src="IMG-20260719-WA0001.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" data-caption="Senyum kebahagiaan" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Senyum kebahagiaan')"><img src="IMG-20260718-WA0019.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" data-caption="Menuju hari bahagia" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari bahagia')"><img src="IMG-20260719-WA0027.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" data-caption="Menuju hari bahagia" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari beautiful')"><img src="IMG-20260719-WA0027.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
         </div>
         <p style="text-align:center; font-style:italic; color:#6b6a5a; font-size:0.85rem;">✨ Klik foto untuk melihat detail ✨</p>
       </div>
@@ -803,12 +794,12 @@
         <div class="islamic-divider"><i class="fas fa-gift"></i></div>
         <p style="text-align:center; margin-bottom:10px; font-size:0.9rem;">Semoga menjadi amal jariyah. Kirimkan tanda kasih melalui:</p>
         <div class="bank-box" onclick="showToast('💳 Klik Salin untuk menyalin nomor rekening')">
-          <div style="font-size:0.85rem;"><i class="fas fa-university" style="color:var(--emerald);"></i> <strong>BCA Syariah</strong> 1234567890<br><span style="font-size:0.75rem;">a.n Sumandiyah</span></div>
-          <button class="copy-btn" data-rek="1234567890"><i class="fas fa-copy"></i> Salin</button>
+          <div style="font-size:0.85rem;"><i class="fas fa-university" style="color:var(--emerald);"></i> <strong>BRI</strong> 552401024840532<br><span style="font-size:0.75rem;">a.n Sumandiyah</span></div>
+          <button class="copy-btn" data-rek="552401024840532"><i class="fas fa-copy"></i> Salin</button>
         </div>
         <div class="bank-box" onclick="showToast('💳 Klik Salin untuk menyalin nomor rekening')">
-          <div style="font-size:0.85rem;"><i class="fas fa-wallet" style="color:var(--emerald);"></i> <strong>Mandiri Syariah</strong> 9876543210<br><span style="font-size:0.75rem;">a.n Suheri</span></div>
-          <button class="copy-btn" data-rek="9876543210"><i class="fas fa-copy"></i> Salin</button>
+          <div style="font-size:0.85rem;"><i class="fas fa-wallet" style="color:var(--emerald);"></i> <strong>BNI</strong> 1124825436<br><span style="font-size:0.75rem;">a.n Suheri</span></div>
+          <button class="copy-btn" data-rek="1124825436"><i class="fas fa-copy"></i> Salin</button>
         </div>
         <div style="margin-top:15px; text-align:center; background:#eef7e7; border-radius:16px; padding:10px; font-size:0.85rem; cursor:pointer;" onclick="showToast('🤲 Jazakumullah khairan katsiran')">
           <i class="fas fa-pray" style="color:var(--emerald);"></i> Jazakumullah khairan katsiran
@@ -820,15 +811,15 @@
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Ucapan & Doa</h2>
         <div class="islamic-divider"><i class="fas fa-comment-dots"></i></div>
         <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Bunda Ratna')">
-          <strong>Bunda Ratna</strong> "Barakallahu lakuma wa baraka 'alaikuma. Selamat menempuh hidup baru."
+          <strong>Gus Pirjon</strong> "Barakallahu lakuma wa baraka 'alaikuma. Selamat menempuh hidup baru."
         </div>
         <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Kakak Aldi')">
-          <strong>Kakak Aldi</strong> "Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin."
+          <strong>Cak Imin (Suwandi)</strong> "Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin."
         </div>
         <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Teman Kampus')">
-          <strong>Teman Kampus</strong> "Akhirnya halal! Bahagia selalu Sumandiyah & Suheri."
+          <strong>Gus Markuana</strong> "Akhirnya halal! Bahagia selalu Sumandiyah & Suheri."
         </div>
-        <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius:14px; border:1px solid #cbdbbe; font-family:'Jost',sans-serif; resize:none; margin-top:10px;"></textarea>
+        <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius:14px; border:1px solid #cbdbbe; font-family:'Jost',sans-serif; resize:none; margin-top:10px; transition:all 0.3s;"></textarea>
         <button class="btn-luxe" id="kirimUcapan" style="margin-top:8px; max-width:100%;"><i class="fas fa-paper-plane"></i> Kirim Ucapan</button>
       </div>
     </div>
@@ -844,7 +835,7 @@
   </div>
 
   <audio id="bgMusic" loop preload="auto">
-    <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_1d5c5a5a5a.mp3" type="audio/mpeg">
+    <source src="WhatsApp Video 2026-08-31 at 23.43.55.mp3" type="audio/mpeg">
   </audio>
 
   <script>
