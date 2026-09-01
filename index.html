@@ -106,11 +106,6 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 15px rgba(212, 175, 55, 0.3);
     }
 
-    .music-toggle:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 25px rgba(212, 175, 55, 0.5);
-    }
-
     .music-toggle.playing {
       animation: musicPulse 2s ease-in-out infinite;
       background: linear-gradient(135deg, var(--gold-dark), var(--gold));
@@ -352,15 +347,15 @@
       overflow: hidden;
     }
 
-    /* NAMA TAMU DI HOME */
+    /* NAMA TAMU DI HOME - TYPEWRITER EFFECT */
     .guest-name-box {
       background: linear-gradient(135deg, rgba(10, 92, 74, 0.08), rgba(212, 175, 55, 0.15));
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 16px;
-      padding: 12px 10px;
+      padding: 14px 10px;
       margin: 10px 0;
       text-align: center;
-      animation: fadeInUp 1s ease;
+      animation: fadeInUp 0.8s ease;
     }
 
     .guest-label {
@@ -373,12 +368,30 @@
 
     .guest-name-display {
       font-family: 'Amiri', serif;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--emerald-dark);
       letter-spacing: 1px;
       margin-top: 2px;
       text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+      min-height: 2.5rem;
+      display: inline-block;
+    }
+
+    /* Kursor typewriter */
+    .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.5rem;
+      background: var(--gold-dark);
+      margin-left: 2px;
+      animation: blink 0.7s step-end infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     .btn-luxe {
@@ -608,10 +621,11 @@
           
           <div class="islamic-divider">۞</div>
           
-          <!-- NAMA TAMU DI HOME -->
+          <!-- NAMA TAMU DENGAN TYPEWRITER EFFECT -->
           <div class="guest-name-box">
             <div class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</div>
-            <div class="guest-name-display" id="guestNameDisplay">Tamu Undangan</div>
+            <div class="guest-name-display" id="guestNameDisplay"></div>
+            <span class="typewriter-cursor" id="typewriterCursor"></span>
           </div>
           
           <div style="display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; margin:8px 0;">
@@ -739,7 +753,30 @@
       }
       
       const guestName = getGuestName();
-      document.getElementById('guestNameDisplay').textContent = guestName;
+      
+      // ====== TYPEWRITER EFFECT ======
+      function typeWriterEffect(elementId, text, speed) {
+        const element = document.getElementById(elementId);
+        const cursor = document.getElementById('typewriterCursor');
+        let index = 0;
+        
+        function type() {
+          if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+          } else {
+            // Selesai mengetik, kursor tetap berkedip
+            cursor.style.display = 'inline-block';
+          }
+        }
+        
+        // Mulai animasi setelah halaman dimuat
+        setTimeout(type, 1000);
+      }
+      
+      // Jalankan typewriter effect
+      typeWriterEffect('guestNameDisplay', guestName, 100);
 
       // ====== COUNTDOWN ======
       const weddingDate = new Date('2026-12-20T09:00:00+07:00');
