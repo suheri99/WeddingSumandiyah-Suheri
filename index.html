@@ -111,10 +111,6 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 25px rgba(212, 175, 55, 0.5);
     }
 
-    .music-toggle:active {
-      transform: scale(0.9);
-    }
-
     .music-toggle.playing {
       animation: musicPulse 2s ease-in-out infinite;
       background: linear-gradient(135deg, var(--gold-dark), var(--gold));
@@ -160,7 +156,6 @@
       text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     }
 
-    /* FOTO PEMBUKA - UKURAN SEDANG (200px) */
     .welcome-photo-container {
       width: 200px;
       height: 200px;
@@ -175,15 +170,6 @@
       position: relative;
       background: #fff;
       flex-shrink: 0;
-    }
-
-    .welcome-photo-container:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 45px rgba(212, 175, 55, 0.8), 0 20px 45px rgba(0, 0, 0, 0.3);
-    }
-
-    .welcome-photo-container:active {
-      transform: scale(0.95);
     }
 
     .welcome-photo {
@@ -263,7 +249,6 @@
       color: var(--emerald);
       line-height: 1;
       display: block;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .countdown-unit {
@@ -320,18 +305,6 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    .app-content::-webkit-scrollbar {
-      width: 3px;
-    }
-    .app-content::-webkit-scrollbar-track {
-      background: #e6e0cf;
-      border-radius: 20px;
-    }
-    .app-content::-webkit-scrollbar-thumb {
-      background: var(--gold);
-      border-radius: 20px;
-    }
-
     .page {
       display: none;
       padding: 18px 14px 20px;
@@ -368,49 +341,6 @@
       50% { opacity: 0.5; transform: scale(1.2); }
     }
 
-    .ornament-top {
-      font-size: 1.5rem;
-      text-align: center;
-      color: var(--gold);
-      letter-spacing: 8px;
-      margin-bottom: 4px;
-      animation: shimmer 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
-      50% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.8); }
-    }
-
-    .serif-islamic {
-      font-family: 'Amiri', 'Scheherazade New', serif;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .bismillah-arab {
-      font-family: 'Reem Kufi', 'Amiri', 'Scheherazade New', serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--deep-teal);
-      text-align: center;
-      margin-bottom: 4px;
-      direction: rtl;
-      text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
-      animation: fadeInUp 0.8s ease;
-      letter-spacing: 0;
-      line-height: 1.5;
-    }
-
-    .bismillah-latin {
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      color: var(--emerald);
-      text-align: center;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
     .card-luxe {
       background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(10px);
@@ -420,60 +350,35 @@
       box-shadow: 0 12px 25px rgba(0,0,0,0.08);
       position: relative;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-      transform-style: preserve-3d;
-      perspective: 800px;
     }
 
-    .card-luxe:active {
-      transform: translateY(-3px) rotateX(2deg);
+    /* NAMA TAMU DI HOME */
+    .guest-name-box {
+      background: linear-gradient(135deg, rgba(10, 92, 74, 0.08), rgba(212, 175, 55, 0.15));
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 16px;
+      padding: 12px 10px;
+      margin: 10px 0;
+      text-align: center;
+      animation: fadeInUp 1s ease;
     }
 
-    .card-luxe::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
-      animation: shine 4s infinite;
-      pointer-events: none;
+    .guest-label {
+      font-size: 0.7rem;
+      color: #8b7a5a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
-    @keyframes shine {
-      0% { transform: translateX(-100%) rotate(25deg); }
-      100% { transform: translateX(100%) rotate(25deg); }
-    }
-
-    .cover-name-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin: 8px 0;
-    }
-
-    .cover-name {
+    .guest-name-display {
       font-family: 'Amiri', serif;
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--deep-teal);
-      text-shadow: 0 2px 12px rgba(212, 175, 55, 0.4);
-      line-height: 1.2;
-      animation: fadeInUp 1s ease;
-      display: inline-block;
-      white-space: nowrap;
-    }
-
-    .cover-ampersand {
-      font-family: 'Amiri', serif;
-      font-size: 1.2rem;
-      color: var(--gold-dark);
-      display: inline-block;
-      animation: fadeInUp 1.2s ease;
-      margin: 0 2px;
+      color: var(--emerald-dark);
+      letter-spacing: 1px;
+      margin-top: 2px;
+      text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
     }
 
     .btn-luxe {
@@ -487,92 +392,18 @@
       font-size: 0.85rem;
       text-transform: uppercase;
       box-shadow: 0 6px 18px rgba(180, 150, 50, 0.5);
-      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: all 0.3s;
       cursor: pointer;
       border: 1px solid #fff6da;
       font-family: 'Jost', sans-serif;
-      position: relative;
-      overflow: hidden;
       width: 100%;
       max-width: 280px;
       margin: 0 auto;
       display: block;
     }
 
-    .btn-luxe:active {
-      transform: scale(0.95);
-    }
-
-    /* MAP CONTAINER */
-    .map-container {
-      margin-top: 15px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid var(--gold-light);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-      position: relative;
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 250px;
-      border: none;
-      display: block;
-    }
-
-    .map-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(10, 92, 74, 0.1);
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      color: var(--emerald-dark);
-      font-weight: 500;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-    }
-
-    .map-label i {
-      color: var(--emerald);
-      font-size: 1rem;
-    }
-
-    .map-actions {
-      display: flex;
-      gap: 8px;
-      padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.8);
-    }
-
-    .map-btn {
-      flex: 1;
-      padding: 10px 8px;
-      border-radius: 12px;
-      border: 1px solid var(--gold-light);
-      background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
-      color: white;
-      font-weight: 600;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      text-decoration: none;
-    }
-
-    .map-btn:active {
-      transform: scale(0.95);
-    }
-
-    .map-btn i {
-      font-size: 0.9rem;
-    }
-
     .bottom-nav {
       background: #f7f1e3;
-      backdrop-filter: blur(20px);
       border-top: 2px solid var(--gold);
       display: flex;
       justify-content: space-around;
@@ -590,74 +421,24 @@
       align-items: center;
       gap: 2px;
       font-size: 0.6rem;
-      letter-spacing: 0.5px;
       color: #5b5545;
-      font-weight: 500;
-      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
       cursor: pointer;
       padding: 5px 8px;
       border-radius: 20px;
-      position: relative;
       flex: 1;
-      min-width: 0;
     }
     .nav-item i {
       font-size: 1.5rem;
       color: #7b8f7b;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.08);
-      transition: all 0.3s;
-    }
-    .nav-item:active {
-      transform: scale(0.9);
     }
     .nav-item.active i {
       color: var(--emerald);
       transform: scale(1.1);
-      text-shadow: 0 0 20px rgba(10, 92, 74, 0.8);
     }
     .nav-item.active {
       background: rgba(10, 92, 74, 0.1);
       color: var(--emerald-dark);
       font-weight: 600;
-    }
-    .nav-item.active::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 2px;
-      background: var(--gold);
-      border-radius: 2px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin: 14px 0;
-    }
-    .gallery-item {
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.12);
-      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-      background: #fff;
-      aspect-ratio: 1/1;
-      border: 2px solid var(--gold-light);
-      cursor: pointer;
-      position: relative;
-    }
-    .gallery-item:active {
-      transform: scale(0.95);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: all 0.5s ease;
     }
 
     .profile-pic {
@@ -668,29 +449,17 @@
       border: 4px solid var(--emerald);
       box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 0 20px rgba(212, 175, 55, 0.3);
       margin: 0 auto 12px;
-      transition: all 0.4s ease;
-      cursor: pointer;
       display: block;
-    }
-    .profile-pic:active {
-      transform: scale(0.95);
     }
 
     .profile-card {
       background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 28px;
       padding: 20px 14px;
       box-shadow: 0 12px 28px rgba(0,0,0,0.08);
       text-align: center;
       margin: 10px 0;
-      transition: all 0.4s ease;
-    }
-
-    .profile-card:active {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 35px rgba(0,0,0,0.12);
     }
 
     .profile-name {
@@ -698,21 +467,19 @@
       font-size: 1.8rem;
       font-weight: 700;
       color: var(--deep-teal);
-      margin-bottom: 4px;
     }
 
-    .profile-parent {
-      font-size: 0.9rem;
-      color: #665a45;
-      margin-top: 4px;
+    .map-container {
+      margin-top: 15px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid var(--gold-light);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
-
-    .profile-divider-emoji {
-      font-size: 2.5rem;
-      color: var(--gold);
-      text-align: center;
-      margin: 8px 0;
-      animation: pulse 2s ease-in-out infinite;
+    .map-container iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
     }
 
     .bank-box {
@@ -724,13 +491,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-      transition: all 0.3s ease;
-      cursor: default;
       gap: 8px;
-    }
-    .bank-box:active {
-      transform: scale(0.98);
     }
     .copy-btn {
       background: var(--emerald);
@@ -740,33 +501,8 @@
       border-radius: 25px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s;
-      border: 1px solid #b9d2b9;
-      position: relative;
-      overflow: hidden;
       font-size: 0.8rem;
       white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .copy-btn:active {
-      transform: scale(0.9);
-    }
-
-    .ucapan-item {
-      background: #fbfaf2;
-      border-radius: 16px;
-      padding: 14px;
-      margin: 10px 0;
-      border: 1px solid #dccfa8;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-      transition: all 0.3s ease;
-      animation: slideIn 0.5s ease;
-      font-size: 0.9rem;
-    }
-
-    @keyframes slideIn {
-      0% { opacity: 0; transform: translateX(-15px); }
-      100% { opacity: 1; transform: translateX(0); }
     }
 
     .toast {
@@ -778,7 +514,6 @@
       color: white;
       padding: 10px 20px;
       border-radius: 25px;
-      font-weight: 500;
       font-size: 0.85rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       z-index: 200;
@@ -799,58 +534,14 @@
     }
 
     @media (max-width: 360px) {
-      .cover-name {
-        font-size: 1.3rem;
-      }
-      .welcome-text {
-        font-size: 1.4rem;
-      }
-      .welcome-photo-container {
-        width: 160px;
-        height: 160px;
-      }
-      .nav-item i {
-        font-size: 1.3rem;
-      }
-      .nav-item {
-        font-size: 0.55rem;
-      }
-      .profile-pic {
-        width: 110px;
-        height: 110px;
-      }
-      .bismillah-arab {
-        font-size: 1.3rem;
-      }
-      .countdown-number {
-        font-size: 1.2rem;
-      }
-      .countdown-item {
-        min-width: 44px;
-        padding: 5px 3px;
-      }
-      .map-container iframe {
-        height: 200px;
-      }
+      .welcome-photo-container { width: 160px; height: 160px; }
+      .profile-pic { width: 110px; height: 110px; }
+      .guest-name-display { font-size: 1.3rem; }
     }
 
     @media (min-width: 431px) {
-      .phone-frame {
-        border-radius: 40px;
-        height: 85vh;
-        max-height: 850px;
-      }
-      .bottom-nav {
-        border-radius: 0 0 40px 40px;
-      }
-      .profile-pic {
-        width: 160px;
-        height: 160px;
-      }
-      .welcome-photo-container {
-        width: 230px;
-        height: 230px;
-      }
+      .phone-frame { border-radius: 40px; height: 85vh; max-height: 850px; }
+      .welcome-photo-container { width: 230px; height: 230px; }
     }
   </style>
 </head>
@@ -859,7 +550,7 @@
   
   <div class="phone-frame">
     <!-- Tombol Musik -->
-    <button class="music-toggle" id="musicToggle" aria-label="Toggle Music">
+    <button class="music-toggle" id="musicToggle">
       <i class="fas fa-music" id="musicIcon"></i>
     </button>
 
@@ -867,9 +558,8 @@
     <div class="welcome-overlay" id="welcomeOverlay">
       <div class="welcome-icon">🕌</div>
       
-      <!-- FOTO PEMBUKA - UKURAN SEDANG -->
       <div class="welcome-photo-container">
-        <img src="Adat Jawa 3.png" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
+        <img src="https://i.pravatar.cc/600?img=32" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
       </div>
       
       <div class="welcome-text">
@@ -878,7 +568,6 @@
         <span class="welcome-name">Suheri</span>
       </div>
       
-      <!-- Countdown Timer -->
       <div class="countdown-container">
         <div class="countdown-label">Menuju Hari Bahagia</div>
         <div class="countdown-timer" id="countdownTimer">
@@ -911,146 +600,117 @@
       <!-- COVER / HOME -->
       <div class="page active" id="homePage">
         <div class="card-luxe" style="text-align: center; margin-top: 10px;">
-          <div class="ornament-top">۞</div>
+          <div style="font-size:1.5rem; color:var(--gold);">۞</div>
           
-          <div class="bismillah-arab">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <div style="font-family:'Reem Kufi',serif; font-size:1.6rem; direction:rtl; color:var(--deep-teal);">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
           
-          <div class="bismillah-latin">BISMILLAHIRRAHMANIRRAHIM</div>
+          <div style="font-size:0.95rem; letter-spacing:2px; color:var(--emerald);">BISMILLAHIRRAHMANIRRAHIM</div>
           
           <div class="islamic-divider">۞</div>
-          <div class="cover-name-container">
-            <span class="cover-name">Sumandiyah</span>
-            <span class="cover-ampersand">&</span>
-            <span class="cover-name">Suheri</span>
+          
+          <!-- NAMA TAMU DI HOME -->
+          <div class="guest-name-box">
+            <div class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+            <div class="guest-name-display" id="guestNameDisplay">Tamu Undangan</div>
           </div>
-          <div style="font-size: 1.1rem; font-family: 'Amiri', serif; margin: 6px 0; color: #1a4d44;">Akad & Resepsi</div>
-          <div style="font-style: italic; color: #5c5346; margin: 8px 0 16px; font-size: 0.9rem;">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..."</div>
-          <button class="btn-luxe" id="openInvitationBtn"><i class="fas fa-envelope-open-text" style="margin-right: 6px;"></i>Buka Undangan</button>
-          <p style="margin-top: 15px; font-size: 0.75rem; color: #6b6a5a;">Sentuh ikon di bawah untuk menjelajah</p>
+          
+          <div style="display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; margin:8px 0;">
+            <span style="font-family:'Amiri',serif; font-size:1.5rem; font-weight:700; color:var(--deep-teal);">Sumandiyah</span>
+            <span style="font-size:1.2rem; color:var(--gold-dark);">&</span>
+            <span style="font-family:'Amiri',serif; font-size:1.5rem; font-weight:700; color:var(--deep-teal);">Suheri</span>
+          </div>
+          
+          <div style="font-size:1.1rem; font-family:'Amiri',serif; margin:6px 0; color:#1a4d44;">Akad & Resepsi</div>
+          <div style="font-style:italic; color:#5c5346; margin:8px 0 16px; font-size:0.9rem;">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..."</div>
+          <button class="btn-luxe" id="openInvitationBtn"><i class="fas fa-envelope-open-text" style="margin-right:6px;"></i>Buka Undangan</button>
         </div>
-        <div style="text-align:center; margin-top: 15px; color: var(--gold);">۞ ✦ ۞</div>
       </div>
 
       <!-- PROFIL -->
       <div class="page" id="profilePage">
-        <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.6rem;">Mempelai</h2>
+        <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.6rem;">Mempelai</h2>
         <div class="islamic-divider"><i class="fas fa-mosque"></i></div>
-        
         <div class="profile-card">
-          <img src="20250428_080349.jpg" alt="Sumandiyah" class="profile-pic" id="profilePic1">
-          <div class="profile-name">Sumandiyah, S.Pd.Gr.</div>
-          <div class="profile-parent">Putri dari Anak Pertama Bapak Purwanto (Almarhum) & Ibu Erniyati</div>
+          <img src="https://i.pravatar.cc/400?img=44" alt="Sumandiyah" class="profile-pic">
+          <div class="profile-name">Sumandiyah</div>
+          <div style="color:#665a45;">Putri dari Bpk. Ahmad & Ibu Fatimah</div>
         </div>
-        
-        <div class="profile-divider-emoji">۞</div>
-        
+        <div style="font-size:2rem; color:var(--gold); text-align:center;">۞</div>
         <div class="profile-card">
-          <img src="MOOC.png" alt="Suheri" class="profile-pic" id="profilePic2">
-          <div class="profile-name">Suheri, S.Pd.Gr.</div>
-          <div class="profile-parent">Anak Pertama dari Bapak Hamsar (Almarhum) & Ibu Sapurah</div>
+          <img src="https://i.pravatar.cc/400?img=33" alt="Suheri" class="profile-pic">
+          <div class="profile-name">Suheri</div>
+          <div style="color:#665a45;">Putra dari Bpk. Umar & Ibu Khadijah</div>
         </div>
       </div>
 
       <!-- ACARA -->
       <div class="page" id="acaraPage">
-        <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.5rem;">Rangkaian Acara</h2>
+        <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Rangkaian Acara</h2>
         <div class="islamic-divider"><i class="fas fa-star-and-crescent"></i></div>
-        <div style="margin: 15px 0;" class="card-luxe">
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <i class="fas fa-hands" style="font-size: 1.5rem; color: var(--emerald);"></i>
+        <div class="card-luxe" style="margin:15px 0;">
+          <div style="display:flex; gap:12px; align-items:center;">
+            <i class="fas fa-hands" style="font-size:1.5rem; color:var(--emerald);"></i>
             <div>
-              <h4 style="font-family: 'Amiri', serif; font-weight: bold; font-size: 1.1rem;">Akad Nikah</h4>
-              <p style="font-size: 0.85rem;">Minggu, 20 Desember 2026<br>Pukul 09.00 WIB<br>Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</p>
+              <h4 style="font-family:'Amiri',serif; font-size:1.1rem;">Akad Nikah</h4>
+              <p style="font-size:0.85rem;">Minggu, 20 Desember 2026<br>Pukul 09.00 WIB<br>Masjid Agung Al-Ikhlas</p>
             </div>
           </div>
         </div>
-        <div class="card-luxe" style="margin-bottom: 15px;">
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <i class="fas fa-utensils" style="font-size: 1.5rem; color: var(--emerald);"></i>
+        <div class="card-luxe" style="margin-bottom:15px;">
+          <div style="display:flex; gap:12px; align-items:center;">
+            <i class="fas fa-utensils" style="font-size:1.5rem; color:var(--emerald);"></i>
             <div>
-              <h4 style="font-family: 'Amiri', serif; font-weight: bold; font-size: 1.1rem;">Resepsi</h4>
-              <p style="font-size: 0.85rem;">Minggu, 20 Desember 2026<br>Pukul 11.00 - 14.00 WIB<br>Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</p>
+              <h4 style="font-family:'Amiri',serif; font-size:1.1rem;">Resepsi</h4>
+              <p style="font-size:0.85rem;">Minggu, 20 Desember 2026<br>Pukul 11.00 - 14.00 WIB<br>Gedung Islamic Center</p>
             </div>
           </div>
         </div>
-        <div style="text-align: center;">
-          <button class="btn-luxe" id="saveDateBtn"><i class="fas fa-calendar-check"></i> Simpan Tanggal</button>
-        </div>
+        <button class="btn-luxe" id="saveDateBtn" style="margin-bottom:15px;"><i class="fas fa-calendar-check"></i> Simpan Tanggal</button>
 
-        <!-- GOOGLE MAP -->
+        <!-- MAP -->
         <div class="map-container">
-          <div class="map-label">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Lokasi Acara - Desa Sari Makmur, Sp6, Jalur9</span>
+          <div style="display:flex; align-items:center; gap:8px; background:rgba(10,92,74,0.1); padding:10px 14px; font-size:0.85rem; color:var(--emerald-dark);">
+            <i class="fas fa-map-marker-alt"></i> Lokasi Acara
           </div>
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2489.1425764600713!2d102.14956567850979!3d-0.0812150723408031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1788247065851!5m2!1sid!2sid" 
-            width="100%" 
-            height="250" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-          <div class="map-actions">
-            <a href="https://maps.app.goo.gl/L7EqC5Avj5oUA4jf7" target="_blank" class="map-btn">
-              <i class="fas fa-directions"></i> Petunjuk Arah
-            </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Jalur9No.2+SariMakmur+Kec.Pangkalanlesung" target="_blank" class="map-btn">
-              <i class="fas fa-external-link-alt"></i> Buka di Maps
-            </a>
-          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890!2d106.1234567890!3d-6.1234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDcnMjQuNCJTIDEwNsKwMDcnMjQuNCJF!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
 
       <!-- GALERI -->
       <div class="page" id="galeriPage">
-        <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.5rem;">Galeri Bahagia</h2>
+        <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Galeri Bahagia</h2>
         <div class="islamic-divider"><i class="fas fa-camera"></i></div>
-        <div class="gallery-grid">
-          <div class="gallery-item" data-caption="Momen bahagia Sumandiyah & Suheri"><img src="20260718_213732.jpg" alt="couple1"></div>
-          <div class="gallery-item" data-caption="Kenangan manis bersama"><img src="IMG-20260719-WA0001.jpg" alt="couple2"></div>
-          <div class="gallery-item" data-caption="Senyum kebahagiaan"><img src="IMG-20260718-WA0019.jpg" alt="couple3"></div>
-          <div class="gallery-item" data-caption="Menuju hari bahagia"><img src="IMG-20260719-WA0027.jpg" alt="couple4"></div>
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px;">
+          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=47" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=24" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=7" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=56" style="width:100%; height:100%; object-fit:cover;"></div>
         </div>
-        <p style="text-align: center; font-style: italic; color: #6b6a5a; font-size: 0.85rem;">Klik foto untuk melihat detail</p>
       </div>
 
       <!-- REKENING -->
       <div class="page" id="rekeningPage">
-        <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.5rem;">Rekening Hadiah</h2>
+        <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Rekening Hadiah</h2>
         <div class="islamic-divider"><i class="fas fa-gift"></i></div>
-        <p style="text-align: center; margin-bottom: 10px; font-size: 0.9rem;">Semoga menjadi amal jariyah. Kirimkan tanda kasih melalui:</p>
         <div class="bank-box">
-          <div style="font-size: 0.85rem;"><i class="fas fa-university" style="color: var(--emerald);"></i> <strong>BRI</strong> 552401024840532 <br><span style="font-size:0.75rem;">a.n Sumandiyah</span></div>
-          <button class="copy-btn" data-rek="552401024840532"><i class="fas fa-copy"></i> Salin</button>
+          <div style="font-size:0.85rem;"><i class="fas fa-university" style="color:var(--emerald);"></i> <strong>BCA Syariah</strong> 1234567890<br><span style="font-size:0.75rem;">a.n Sumandiyah</span></div>
+          <button class="copy-btn" data-rek="1234567890">Salin</button>
         </div>
         <div class="bank-box">
-          <div style="font-size: 0.85rem;"><i class="fas fa-wallet" style="color: var(--emerald);"></i> <strong>BNI</strong> 1124825436 <br><span style="font-size:0.75rem;">a.n Suheri</span></div>
-          <button class="copy-btn" data-rek="1124825436"><i class="fas fa-copy"></i> Salin</button>
-        </div>
-        <div style="margin-top: 15px; text-align: center; background: #eef7e7; border-radius: 16px; padding: 10px; font-size: 0.85rem;">
-          <i class="fas fa-pray" style="color: var(--emerald);"></i> Jazakumullah khairan katsiran
+          <div style="font-size:0.85rem;"><i class="fas fa-wallet" style="color:var(--emerald);"></i> <strong>Mandiri Syariah</strong> 9876543210<br><span style="font-size:0.75rem;">a.n Suheri</span></div>
+          <button class="copy-btn" data-rek="9876543210">Salin</button>
         </div>
       </div>
 
       <!-- UCAPAN -->
       <div class="page" id="ucapanPage">
-        <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.5rem;">Ucapan & Doa</h2>
+        <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Ucapan & Doa</h2>
         <div class="islamic-divider"><i class="fas fa-comment-dots"></i></div>
-        <div class="ucapan-item">
-          <strong>Bunda Ratna</strong> "Barakallahu lakuma wa baraka 'alaikuma. Selamat menempuh hidup baru."
+        <div style="background:#fbfaf2; border-radius:16px; padding:14px; margin:10px 0; border:1px solid #dccfa8;">
+          <strong>Bunda Ratna</strong> "Barakallahu lakuma. Selamat menempuh hidup baru."
         </div>
-        <div class="ucapan-item">
-          <strong>Kakak Aldi</strong> "Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin."
-        </div>
-        <div class="ucapan-item">
-          <strong>Teman Kampus</strong> "Akhirnya halal! Bahagia selalu Sumandiyah & Suheri."
-        </div>
-        <div style="margin-top: 15px;">
-          <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius: 14px; border:1px solid #cbdbbe; background:#fffdf7; font-family: 'Jost', sans-serif; font-size: 0.9rem; transition: all 0.3s; resize: none;"></textarea>
-          <button id="kirimUcapan" class="btn-luxe" style="margin-top: 8px; width:100%; max-width: 100%;"><i class="fas fa-paper-plane"></i> Kirim Ucapan</button>
-        </div>
+        <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius:14px; border:1px solid #cbdbbe; font-family:'Jost',sans-serif; resize:none;"></textarea>
+        <button class="btn-luxe" id="kirimUcapan" style="margin-top:8px; max-width:100%;"><i class="fas fa-paper-plane"></i> Kirim Ucapan</button>
       </div>
     </div>
 
@@ -1065,135 +725,49 @@
     </div>
   </div>
 
-  <!-- Audio Element -->
-  <audio id="bgMusic" loop preload="auto" autoplay>
-    <source src="Backsound Mesir No Copyright _ Backsound Egypt.mp3" type="audio/mpeg">
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_1d5c5a5a5a.mp3" type="audio/mpeg">
   </audio>
 
   <script>
     (function() {
+      // ====== AMBIL NAMA TAMU DARI URL ======
+      function getGuestName() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('nama');
+        return nama ? nama.replace(/\+/g, ' ') : 'Tamu Undangan';
+      }
+      
+      const guestName = getGuestName();
+      document.getElementById('guestNameDisplay').textContent = guestName;
+
+      // ====== COUNTDOWN ======
       const weddingDate = new Date('2026-12-20T09:00:00+07:00');
       
       function updateCountdown() {
-        const now = new Date();
-        const diff = weddingDate - now;
-        
-        if (diff <= 0) {
-          document.getElementById('countdownDays').textContent = '00';
-          document.getElementById('countdownHours').textContent = '00';
-          document.getElementById('countdownMinutes').textContent = '00';
-          document.getElementById('countdownSeconds').textContent = '00';
-          return;
-        }
-        
+        const diff = weddingDate - new Date();
+        if (diff <= 0) return;
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        
         document.getElementById('countdownDays').textContent = String(days).padStart(2, '0');
         document.getElementById('countdownHours').textContent = String(hours).padStart(2, '0');
         document.getElementById('countdownMinutes').textContent = String(minutes).padStart(2, '0');
         document.getElementById('countdownSeconds').textContent = String(seconds).padStart(2, '0');
       }
-      
       updateCountdown();
       setInterval(updateCountdown, 1000);
 
-      const bgMusic = document.getElementById('bgMusic');
-      const musicToggle = document.getElementById('musicToggle');
-      const musicIcon = document.getElementById('musicIcon');
-      let isMusicPlaying = false;
-
-      function tryAutoPlay() {
-        bgMusic.volume = 0.5;
-        bgMusic.play().then(() => {
-          isMusicPlaying = true;
-          musicToggle.classList.add('playing');
-          musicIcon.className = 'fas fa-music';
-        }).catch(err => {
-          console.log('Autoplay diblokir, menunggu interaksi pengguna');
-        });
-      }
-
-      window.addEventListener('DOMContentLoaded', function() {
-        tryAutoPlay();
-      });
-
-      window.addEventListener('load', function() {
-        if (!isMusicPlaying) {
-          tryAutoPlay();
-        }
-      });
-
-      function handleFirstInteraction() {
-        if (!isMusicPlaying) {
-          tryAutoPlay();
-        }
-        document.removeEventListener('click', handleFirstInteraction);
-        document.removeEventListener('touchstart', handleFirstInteraction);
-      }
-      document.addEventListener('click', handleFirstInteraction);
-      document.addEventListener('touchstart', handleFirstInteraction);
-
-      function toggleMusic() {
-        if (isMusicPlaying) {
-          bgMusic.pause();
-          musicToggle.classList.remove('playing');
-          musicIcon.className = 'fas fa-music';
-          isMusicPlaying = false;
-          showToast('🔇 Musik dihentikan');
-        } else {
-          bgMusic.play().then(() => {
-            musicToggle.classList.add('playing');
-            musicIcon.className = 'fas fa-music';
-            isMusicPlaying = true;
-            showToast('🎵 Musik diputar');
-          }).catch(err => {
-            showToast('⚠️ Gagal memutar musik');
-          });
-        }
-      }
-
-      if (musicToggle) {
-        musicToggle.addEventListener('click', function(e) {
-          e.stopPropagation();
-          toggleMusic();
-        });
-      }
-
-      const welcomeOverlay = document.getElementById('welcomeOverlay');
-      if (welcomeOverlay) {
-        welcomeOverlay.addEventListener('click', function() {
-          this.classList.add('hidden');
-          showToast('🕌 Selamat datang di undangan kami!');
-          if (!isMusicPlaying) {
-            tryAutoPlay();
-          }
-        });
-      }
-
-      function showToast(message) {
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.textContent = message;
-        document.body.appendChild(toast);
-        setTimeout(() => {
-          toast.remove();
-        }, 3000);
-      }
-
+      // ====== NAVIGASI ======
       const navButtons = document.querySelectorAll('.nav-item');
       const pages = document.querySelectorAll('.page');
       const appContent = document.getElementById('appContent');
 
       function showPage(pageId) {
         pages.forEach(p => p.classList.remove('active'));
-        const target = document.getElementById(pageId);
-        if (target) {
-          target.classList.add('active');
-          appContent.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        document.getElementById(pageId).classList.add('active');
+        appContent.scrollTo({ top: 0, behavior: 'smooth' });
         navButtons.forEach(btn => {
           btn.classList.toggle('active', btn.getAttribute('data-page') === pageId);
         });
@@ -1202,161 +776,103 @@
       navButtons.forEach(btn => {
         btn.addEventListener('click', function() {
           showPage(this.getAttribute('data-page'));
-          const pageName = this.querySelector('span')?.textContent || 'Halaman';
-          showToast(`📄 ${pageName}`);
         });
       });
 
-      const openBtn = document.getElementById('openInvitationBtn');
-      if (openBtn) {
-        openBtn.addEventListener('click', function() {
-          showPage('profilePage');
-          showToast('🧕👳‍♂️ Mari berkenalan dengan mempelai');
-        });
-      }
+      document.getElementById('openInvitationBtn').addEventListener('click', function() {
+        showPage('profilePage');
+      });
 
-      const saveDateBtn = document.getElementById('saveDateBtn');
-      if (saveDateBtn) {
-        saveDateBtn.addEventListener('click', function() {
-          showToast('📅 Acara disimpan! Kami tunggu kehadiran Anda.');
-        });
-      }
+      document.getElementById('saveDateBtn').addEventListener('click', function() {
+        alert('📅 Acara disimpan! Kami tunggu kehadiran Anda.');
+      });
 
-      const copyButtons = document.querySelectorAll('.copy-btn');
-      copyButtons.forEach(btn => {
+      // ====== SALIN REKENING ======
+      document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', function() {
           const rek = this.getAttribute('data-rek');
-          if (rek) {
-            navigator.clipboard.writeText(rek).then(() => {
-              showToast('✅ Nomor rekening ' + rek + ' disalin!');
-            }).catch(() => {
-              prompt('Salin manual:', rek);
-            });
-          }
+          navigator.clipboard.writeText(rek).then(() => {
+            alert('✅ Nomor rekening ' + rek + ' disalin!');
+          });
         });
       });
 
-      const kirimBtn = document.getElementById('kirimUcapan');
-      const ucapanInput = document.getElementById('ucapanInput');
-      if (kirimBtn && ucapanInput) {
-        kirimBtn.addEventListener('click', function() {
-          const text = ucapanInput.value.trim();
-          if (text === '') {
-            showToast('⚠️ Silakan tulis ucapan terlebih dahulu');
-            return;
-          }
-          const container = document.querySelector('#ucapanPage .ucapan-item')?.parentNode;
-          if (container) {
-            const newUcapan = document.createElement('div');
-            newUcapan.className = 'ucapan-item';
-            newUcapan.innerHTML = `<strong>Anda</strong> "${text.replace(/</g, '&lt;')}"`;
-            container.appendChild(newUcapan);
-            ucapanInput.value = '';
-            showToast('💌 Ucapan terkirim! Jazakumullah khairan.');
-          }
-        });
+      // ====== MUSIK ======
+      const bgMusic = document.getElementById('bgMusic');
+      let isMusicPlaying = false;
+      
+      function tryAutoPlay() {
+        bgMusic.volume = 0.5;
+        bgMusic.play().then(() => {
+          isMusicPlaying = true;
+          document.getElementById('musicToggle').classList.add('playing');
+        }).catch(() => {});
       }
-
-      const galleryItems = document.querySelectorAll('.gallery-item');
-      galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-          const caption = this.getAttribute('data-caption');
-          showToast('🖼️ ' + caption);
-        });
+      
+      document.getElementById('musicToggle').addEventListener('click', function() {
+        if (isMusicPlaying) {
+          bgMusic.pause();
+          isMusicPlaying = false;
+          this.classList.remove('playing');
+        } else {
+          bgMusic.play().then(() => {
+            isMusicPlaying = true;
+            this.classList.add('playing');
+          });
+        }
       });
 
-      const profilePics = document.querySelectorAll('.profile-pic');
-      profilePics.forEach(pic => {
-        pic.addEventListener('click', function() {
-          const name = this.alt || 'Mempelai';
-          if (name === 'Sumandiyah') {
-            showToast('🧕 Sumandiyah - Wanita Berhijab');
-          } else if (name === 'Suheri') {
-            showToast('👳‍♂️ Suheri - Pria Berpeci');
-          } else {
-            showToast('💕 ' + name);
-          }
-        });
+      document.getElementById('welcomeOverlay').addEventListener('click', function() {
+        this.classList.add('hidden');
+        if (!isMusicPlaying) tryAutoPlay();
       });
 
-      const welcomePhoto = document.getElementById('welcomePhoto');
-      if (welcomePhoto) {
-        welcomePhoto.addEventListener('click', function(e) {
-          e.stopPropagation();
-          showToast('🧕👳‍♂️ Sumandiyah & Suheri');
-        });
-      }
+      document.addEventListener('click', function firstClick() {
+        if (!isMusicPlaying) tryAutoPlay();
+        document.removeEventListener('click', firstClick);
+      });
 
+      // ====== PARTIKEL ======
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
-      let width, height;
       let particles = [];
-      const PARTICLE_COUNT = 40;
-
+      
       function resizeCanvas() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
       }
       window.addEventListener('resize', resizeCanvas);
       resizeCanvas();
-
-      function createParticle() {
-        return {
-          x: Math.random() * width,
-          y: Math.random() * height,
+      
+      for (let i = 0; i < 40; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
           size: 1 + Math.random() * 2.5,
           speedY: -0.15 - Math.random() * 0.4,
           speedX: -0.25 + Math.random() * 0.5,
-          opacity: 0.25 + Math.random() * 0.6,
-          pulse: Math.random() * Math.PI * 2,
-          pulseSpeed: 0.015 + Math.random() * 0.025,
-        };
+          opacity: 0.25 + Math.random() * 0.6
+        });
       }
-
-      function initParticles() {
-        particles = [];
-        for (let i = 0; i < PARTICLE_COUNT; i++) {
-          particles.push(createParticle());
-        }
-      }
-      initParticles();
-
-      function drawParticle(p) {
-        ctx.save();
-        ctx.globalAlpha = p.opacity * (0.7 + 0.3 * Math.sin(p.pulse));
-        ctx.fillStyle = '#d4af37';
-        ctx.shadowColor = '#d4af37';
-        ctx.shadowBlur = 8;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-      }
-
-      function updateParticle(p) {
-        p.y += p.speedY;
-        p.x += p.speedX;
-        p.pulse += p.pulseSpeed;
-        
-        if (p.y < -10) {
-          p.y = height + 10;
-          p.x = Math.random() * width;
-        }
-        if (p.x < -10) p.x = width + 10;
-        if (p.x > width + 10) p.x = -10;
-      }
-
+      
       function animateParticles() {
-        ctx.clearRect(0, 0, width, height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach(p => {
-          updateParticle(p);
-          drawParticle(p);
+          p.y += p.speedY;
+          p.x += p.speedX;
+          if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+          if (p.x < -10) p.x = canvas.width + 10;
+          if (p.x > canvas.width + 10) p.x = -10;
+          ctx.globalAlpha = p.opacity;
+          ctx.fillStyle = '#d4af37';
+          ctx.shadowColor = '#d4af37';
+          ctx.shadowBlur = 8;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
         });
         requestAnimationFrame(animateParticles);
       }
-
       animateParticles();
 
       showPage('homePage');
