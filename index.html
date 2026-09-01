@@ -141,7 +141,7 @@
       cursor: pointer;
       transition: opacity 0.8s ease, transform 0.8s ease;
       opacity: 1;
-      padding: 20px;
+      padding: 15px;
       border: none;
       overflow-y: auto;
     }
@@ -160,20 +160,30 @@
       text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     }
 
+    /* FOTO PEMBUKA - LEBIH BESAR */
     .welcome-photo-container {
-      width: 100px;
-      height: 100px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       overflow: hidden;
-      border: 4px solid var(--gold);
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5), 0 8px 20px rgba(0, 0, 0, 0.15);
-      margin-bottom: 15px;
+      border: 5px solid var(--gold);
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 15px 35px rgba(0, 0, 0, 0.2);
+      margin-bottom: 18px;
       animation: fadeInUp 1s ease;
       cursor: pointer;
       transition: all 0.4s ease;
       position: relative;
       background: #fff;
       flex-shrink: 0;
+    }
+
+    .welcome-photo-container:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 50px rgba(212, 175, 55, 0.8), 0 20px 45px rgba(0, 0, 0, 0.3);
+    }
+
+    .welcome-photo-container:active {
+      transform: scale(0.95);
     }
 
     .welcome-photo {
@@ -185,7 +195,7 @@
 
     .welcome-text {
       font-family: 'Amiri', serif;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: var(--deep-teal);
       text-align: center;
       padding: 0 5px;
@@ -206,7 +216,7 @@
     .welcome-ampersand {
       display: inline-block;
       color: var(--gold-dark);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin: 0 3px;
     }
 
@@ -795,8 +805,8 @@
         font-size: 1.4rem;
       }
       .welcome-photo-container {
-        width: 80px;
-        height: 80px;
+        width: 140px;
+        height: 140px;
       }
       .nav-item i {
         font-size: 1.3rem;
@@ -836,6 +846,10 @@
         width: 160px;
         height: 160px;
       }
+      .welcome-photo-container {
+        width: 200px;
+        height: 200px;
+      }
     }
   </style>
 </head>
@@ -852,6 +866,7 @@
     <div class="welcome-overlay" id="welcomeOverlay">
       <div class="welcome-icon">🕌</div>
       
+      <!-- FOTO PEMBUKA BESAR -->
       <div class="welcome-photo-container">
         <img src="Adat Jawa 3.png" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
       </div>
@@ -897,10 +912,8 @@
         <div class="card-luxe" style="text-align: center; margin-top: 10px;">
           <div class="ornament-top">۞</div>
           
-          <!-- Tulisan Arab Bismillah -->
           <div class="bismillah-arab">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
           
-          <!-- Tulisan Latin Bismillah -->
           <div class="bismillah-latin">BISMILLAHIRRAHMANIRRAHIM</div>
           
           <div class="islamic-divider">۞</div>
@@ -917,25 +930,23 @@
         <div style="text-align:center; margin-top: 15px; color: var(--gold);">۞ ✦ ۞</div>
       </div>
 
-      <!-- PROFIL - FOTO LEBIH BESAR -->
+      <!-- PROFIL -->
       <div class="page" id="profilePage">
         <h2 class="serif-islamic" style="color: var(--emerald-dark); text-align: center; font-size: 1.6rem;">Mempelai</h2>
         <div class="islamic-divider"><i class="fas fa-mosque"></i></div>
         
-        <!-- Profil Sumandiyah -->
         <div class="profile-card">
           <img src="20250428_080349.jpg" alt="Sumandiyah" class="profile-pic" id="profilePic1">
           <div class="profile-name">Sumandiyah, S.Pd.Gr.</div>
-          <div class="profile-parent">Putri dari Anak Pertama Bapak Purwanto (Almarhum) & Ibu Erniyati </div>
+          <div class="profile-parent">Putri dari Anak Pertama Bapak Purwanto (Almarhum) & Ibu Erniyati</div>
         </div>
         
         <div class="profile-divider-emoji">۞</div>
         
-        <!-- Profil Suheri -->
         <div class="profile-card">
           <img src="MOOC.png" alt="Suheri" class="profile-pic" id="profilePic2">
           <div class="profile-name">Suheri, S.Pd.Gr.</div>
-          <div class="profile-parent">Putra dari Anak Pertama Bapak Hamsar (Almarhum) & Ibu Sapurah</div>
+          <div class="profile-parent">Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</div>
         </div>
       </div>
 
@@ -972,7 +983,7 @@
             <span>Lokasi Acara - Desa Sari Makmur, Sp6, Jalur9</span>
           </div>
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3039.116381205891!2d102.14058517349407!3d-0.08107343549326532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMDQnNTEuNCJTIDEwMsKwMDgnMzguMCJF!5e1!3m2!1sid!2sid!4v1788196867335!5m2!1sid!2sid"  
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3039.116381205891!2d102.14058517349407!3d-0.08107343549326532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMDQnNTEuNCJTIDEwMsKwMDgnMzguMCJF!5e1!3m2!1sid!2sid!4v1788196867335!5m2!1sid!2sid" 
             width="100%" 
             height="250" 
             style="border:0;" 
@@ -1010,12 +1021,12 @@
         <div class="islamic-divider"><i class="fas fa-gift"></i></div>
         <p style="text-align: center; margin-bottom: 10px; font-size: 0.9rem;">Semoga menjadi amal jariyah. Kirimkan tanda kasih melalui:</p>
         <div class="bank-box">
-          <div style="font-size: 0.85rem;"><i class="fas fa-university" style="color: var(--emerald);"></i> <strong>BCA Syariah</strong> 1234567890 <br><span style="font-size:0.75rem;">a.n Sumandiyah</span></div>
-          <button class="copy-btn" data-rek="1234567890"><i class="fas fa-copy"></i> Salin</button>
+          <div style="font-size: 0.85rem;"><i class="fas fa-university" style="color: var(--emerald);"></i> <strong>BRI</strong> 552401024840532 <br><span style="font-size:0.75rem;">a.n Sumandiyah</span></div>
+          <button class="copy-btn" data-rek="552401024840532"><i class="fas fa-copy"></i> Salin</button>
         </div>
         <div class="bank-box">
-          <div style="font-size: 0.85rem;"><i class="fas fa-wallet" style="color: var(--emerald);"></i> <strong>Mandiri Syariah</strong> 9876543210 <br><span style="font-size:0.75rem;">a.n Suheri</span></div>
-          <button class="copy-btn" data-rek="9876543210"><i class="fas fa-copy"></i> Salin</button>
+          <div style="font-size: 0.85rem;"><i class="fas fa-wallet" style="color: var(--emerald);"></i> <strong>BNI</strong> 1124825436 <br><span style="font-size:0.75rem;">a.n Suheri</span></div>
+          <button class="copy-btn" data-rek="1124825436"><i class="fas fa-copy"></i> Salin</button>
         </div>
         <div style="margin-top: 15px; text-align: center; background: #eef7e7; border-radius: 16px; padding: 10px; font-size: 0.85rem;">
           <i class="fas fa-pray" style="color: var(--emerald);"></i> Jazakumullah khairan katsiran
@@ -1060,10 +1071,8 @@
 
   <script>
     (function() {
-      // ====== TARGET TANGGAL PERNIKAHAN ======
       const weddingDate = new Date('2026-12-20T09:00:00+07:00');
       
-      // ====== COUNTDOWN TIMER ======
       function updateCountdown() {
         const now = new Date();
         const diff = weddingDate - now;
@@ -1090,7 +1099,6 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
 
-      // ====== MUSIK ======
       const bgMusic = document.getElementById('bgMusic');
       const musicToggle = document.getElementById('musicToggle');
       const musicIcon = document.getElementById('musicIcon');
@@ -1153,7 +1161,6 @@
         });
       }
 
-      // ====== OVERLAY PEMBUKA ======
       const welcomeOverlay = document.getElementById('welcomeOverlay');
       if (welcomeOverlay) {
         welcomeOverlay.addEventListener('click', function() {
@@ -1165,7 +1172,6 @@
         });
       }
 
-      // ====== TOAST NOTIFICATION ======
       function showToast(message) {
         const toast = document.createElement('div');
         toast.className = 'toast';
@@ -1176,7 +1182,6 @@
         }, 3000);
       }
 
-      // ====== NAVIGASI ======
       const navButtons = document.querySelectorAll('.nav-item');
       const pages = document.querySelectorAll('.page');
       const appContent = document.getElementById('appContent');
@@ -1216,7 +1221,6 @@
         });
       }
 
-      // ====== SALIN REKENING ======
       const copyButtons = document.querySelectorAll('.copy-btn');
       copyButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -1231,7 +1235,6 @@
         });
       });
 
-      // ====== KIRIM UCAPAN ======
       const kirimBtn = document.getElementById('kirimUcapan');
       const ucapanInput = document.getElementById('ucapanInput');
       if (kirimBtn && ucapanInput) {
@@ -1253,7 +1256,6 @@
         });
       }
 
-      // ====== INTERAKSI GALERI ======
       const galleryItems = document.querySelectorAll('.gallery-item');
       galleryItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -1262,7 +1264,6 @@
         });
       });
 
-      // ====== INTERAKSI PROFILE PIC ======
       const profilePics = document.querySelectorAll('.profile-pic');
       profilePics.forEach(pic => {
         pic.addEventListener('click', function() {
@@ -1277,7 +1278,6 @@
         });
       });
 
-      // ====== INTERAKSI FOTO WELCOME ======
       const welcomePhoto = document.getElementById('welcomePhoto');
       if (welcomePhoto) {
         welcomePhoto.addEventListener('click', function(e) {
@@ -1286,7 +1286,6 @@
         });
       }
 
-      // ====== PARTIKEL EMAS DI LATAR BELAKANG ======
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
       let width, height;
@@ -1359,7 +1358,6 @@
 
       animateParticles();
 
-      // ====== AUTO SHOW HOME ======
       showPage('homePage');
     })();
   </script>
