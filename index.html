@@ -141,7 +141,7 @@
       cursor: pointer;
       transition: opacity 0.8s ease, transform 0.8s ease;
       opacity: 1;
-      padding: 15px;
+      padding: 12px;
       border: none;
       overflow-y: auto;
     }
@@ -153,22 +153,22 @@
     }
 
     .welcome-icon {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       color: var(--gold-dark);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       animation: pulse 2s ease-in-out infinite;
       text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     }
 
-    /* FOTO PEMBUKA - LEBIH BESAR */
+    /* FOTO PEMBUKA - UKURAN SEDANG (200px) */
     .welcome-photo-container {
-      width: 180px;
-      height: 180px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       overflow: hidden;
-      border: 5px solid var(--gold);
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 15px 35px rgba(0, 0, 0, 0.2);
-      margin-bottom: 18px;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.6), 0 15px 35px rgba(0, 0, 0, 0.2);
+      margin-bottom: 15px;
       animation: fadeInUp 1s ease;
       cursor: pointer;
       transition: all 0.4s ease;
@@ -179,7 +179,7 @@
 
     .welcome-photo-container:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 50px rgba(212, 175, 55, 0.8), 0 20px 45px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 45px rgba(212, 175, 55, 0.8), 0 20px 45px rgba(0, 0, 0, 0.3);
     }
 
     .welcome-photo-container:active {
@@ -222,7 +222,7 @@
 
     /* COUNTDOWN TIMER */
     .countdown-container {
-      margin: 15px 0 10px;
+      margin: 12px 0 8px;
       text-align: center;
       animation: fadeInUp 1.2s ease;
     }
@@ -241,14 +241,15 @@
       gap: 8px;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .countdown-item {
       background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(212, 175, 55, 0.5);
-      border-radius: 14px;
-      padding: 8px 6px;
-      min-width: 55px;
+      border-radius: 12px;
+      padding: 6px 4px;
+      min-width: 50px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       backdrop-filter: blur(5px);
@@ -257,7 +258,7 @@
 
     .countdown-number {
       font-family: 'Jost', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--emerald);
       line-height: 1;
@@ -266,7 +267,7 @@
     }
 
     .countdown-unit {
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       color: #8b7a5a;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -276,7 +277,7 @@
     }
 
     .countdown-colon {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--gold-dark);
       animation: pulse 1s ease-in-out infinite;
@@ -285,7 +286,7 @@
     .welcome-sub {
       font-size: 0.75rem;
       color: #8b7a5a;
-      margin-top: 10px;
+      margin-top: 8px;
       letter-spacing: 3px;
       animation: fadeInOut 2s ease-in-out infinite;
       font-weight: 500;
@@ -805,8 +806,8 @@
         font-size: 1.4rem;
       }
       .welcome-photo-container {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
       }
       .nav-item i {
         font-size: 1.3rem;
@@ -822,11 +823,11 @@
         font-size: 1.3rem;
       }
       .countdown-number {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
       .countdown-item {
-        min-width: 48px;
-        padding: 6px 4px;
+        min-width: 44px;
+        padding: 5px 3px;
       }
       .map-container iframe {
         height: 200px;
@@ -847,8 +848,8 @@
         height: 160px;
       }
       .welcome-photo-container {
-        width: 200px;
-        height: 200px;
+        width: 230px;
+        height: 230px;
       }
     }
   </style>
@@ -866,7 +867,7 @@
     <div class="welcome-overlay" id="welcomeOverlay">
       <div class="welcome-icon">🕌</div>
       
-      <!-- FOTO PEMBUKA BESAR -->
+      <!-- FOTO PEMBUKA - UKURAN SEDANG -->
       <div class="welcome-photo-container">
         <img src="Adat Jawa 3.png" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
       </div>
@@ -946,7 +947,7 @@
         <div class="profile-card">
           <img src="MOOC.png" alt="Suheri" class="profile-pic" id="profilePic2">
           <div class="profile-name">Suheri, S.Pd.Gr.</div>
-          <div class="profile-parent">Kediaman mempelai wanita, Desa Sari Makmur, SP 6 Jalur 9, Kecamatan Pangkalan Lesung, Pelalawan, Riau</div>
+          <div class="profile-parent">Anak Pertama dari Bapak Hamsar (Almarhum) & Ibu Sapurah</div>
         </div>
       </div>
 
@@ -1008,9 +1009,9 @@
         <div class="islamic-divider"><i class="fas fa-camera"></i></div>
         <div class="gallery-grid">
           <div class="gallery-item" data-caption="Momen bahagia Sumandiyah & Suheri"><img src="20260718_213732.jpg" alt="couple1"></div>
-          <div class="gallery-item" data-caption="Kenangan manis bersama"><img src="20260413_102517.jpg" alt="couple2"></div>
-          <div class="gallery-item" data-caption="Senyum kebahagiaan"><img src="20260413_102721.jpg" alt="couple3"></div>
-          <div class="gallery-item" data-caption="Menuju hari bahagia"><img src="20240927_080247.jpg" alt="couple4"></div>
+          <div class="gallery-item" data-caption="Kenangan manis bersama"><img src="IMG-20260719-WA0001.jpg" alt="couple2"></div>
+          <div class="gallery-item" data-caption="Senyum kebahagiaan"><img src="IMG-20260718-WA0019.jpg" alt="couple3"></div>
+          <div class="gallery-item" data-caption="Menuju hari bahagia"><img src="IMG-20260719-WA0027.jpg" alt="couple4"></div>
         </div>
         <p style="text-align: center; font-style: italic; color: #6b6a5a; font-size: 0.85rem;">Klik foto untuk melihat detail</p>
       </div>
@@ -1066,7 +1067,7 @@
 
   <!-- Audio Element -->
   <audio id="bgMusic" loop preload="auto" autoplay>
-    <source src="WhatsApp Video 2026-08-31 at 23.43.55.mp3" type="audio/mpeg">
+    <source src="Backsound Mesir No Copyright _ Backsound Egypt.mp3" type="audio/mpeg">
   </audio>
 
   <script>
