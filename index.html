@@ -132,7 +132,7 @@
       cursor: pointer;
       transition: opacity 0.8s ease, transform 0.8s ease;
       opacity: 1;
-      padding: 12px;
+      padding: 10px;
       border: none;
       overflow-y: auto;
     }
@@ -144,27 +144,37 @@
     }
 
     .welcome-icon {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: var(--gold-dark);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       animation: pulse 2s ease-in-out infinite;
       text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
     }
 
+    /* FOTO PEMBUKA - BESAR */
     .welcome-photo-container {
-      width: 200px;
-      height: 200px;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
       overflow: hidden;
-      border: 4px solid var(--gold);
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.6), 0 15px 35px rgba(0, 0, 0, 0.2);
-      margin-bottom: 15px;
+      border: 5px solid var(--gold);
+      box-shadow: 0 0 50px rgba(212, 175, 55, 0.7), 0 20px 45px rgba(0, 0, 0, 0.25);
+      margin-bottom: 18px;
       animation: fadeInUp 1s ease;
       cursor: pointer;
-      transition: all 0.4s ease;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
       position: relative;
       background: #fff;
       flex-shrink: 0;
+    }
+
+    .welcome-photo-container:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 60px rgba(212, 175, 55, 0.9), 0 25px 55px rgba(0, 0, 0, 0.35);
+    }
+
+    .welcome-photo-container:active {
+      transform: scale(0.95);
     }
 
     .welcome-photo {
@@ -201,25 +211,24 @@
       margin: 0 3px;
     }
 
-    /* COUNTDOWN TIMER */
     .countdown-container {
-      margin: 12px 0 8px;
+      margin: 10px 0 6px;
       text-align: center;
       animation: fadeInUp 1.2s ease;
     }
 
     .countdown-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #8b7a5a;
       letter-spacing: 2px;
       font-weight: 500;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       text-transform: uppercase;
     }
 
     .countdown-timer {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
@@ -229,17 +238,21 @@
       background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 12px;
-      padding: 6px 4px;
-      min-width: 50px;
+      padding: 5px 4px;
+      min-width: 46px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       backdrop-filter: blur(5px);
       transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .countdown-item:active {
+      transform: scale(0.9);
     }
 
     .countdown-number {
       font-family: 'Jost', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--emerald);
       line-height: 1;
@@ -247,7 +260,7 @@
     }
 
     .countdown-unit {
-      font-size: 0.55rem;
+      font-size: 0.5rem;
       color: #8b7a5a;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -257,16 +270,16 @@
     }
 
     .countdown-colon {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--gold-dark);
       animation: pulse 1s ease-in-out infinite;
     }
 
     .welcome-sub {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #8b7a5a;
-      margin-top: 8px;
+      margin-top: 6px;
       letter-spacing: 3px;
       animation: fadeInOut 2s ease-in-out infinite;
       font-weight: 500;
@@ -345,17 +358,27 @@
       box-shadow: 0 12px 25px rgba(0,0,0,0.08);
       position: relative;
       overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .card-luxe:active {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.15);
     }
 
-    /* NAMA TAMU DI HOME - TYPEWRITER EFFECT */
     .guest-name-box {
       background: linear-gradient(135deg, rgba(10, 92, 74, 0.08), rgba(212, 175, 55, 0.15));
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 16px;
-      padding: 14px 10px;
+      padding: 12px 10px;
       margin: 10px 0;
       text-align: center;
       animation: fadeInUp 0.8s ease;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .guest-name-box:active {
+      transform: scale(0.95);
+      background: linear-gradient(135deg, rgba(10, 92, 74, 0.15), rgba(212, 175, 55, 0.25));
     }
 
     .guest-label {
@@ -368,30 +391,12 @@
 
     .guest-name-display {
       font-family: 'Amiri', serif;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--emerald-dark);
       letter-spacing: 1px;
       margin-top: 2px;
       text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
-      min-height: 2.5rem;
-      display: inline-block;
-    }
-
-    /* Kursor typewriter */
-    .typewriter-cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1.5rem;
-      background: var(--gold-dark);
-      margin-left: 2px;
-      animation: blink 0.7s step-end infinite;
-      vertical-align: middle;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
     }
 
     .btn-luxe {
@@ -405,7 +410,7 @@
       font-size: 0.85rem;
       text-transform: uppercase;
       box-shadow: 0 6px 18px rgba(180, 150, 50, 0.5);
-      transition: all 0.3s;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
       cursor: pointer;
       border: 1px solid #fff6da;
       font-family: 'Jost', sans-serif;
@@ -413,6 +418,26 @@
       max-width: 280px;
       margin: 0 auto;
       display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-luxe:active {
+      transform: scale(0.92);
+      box-shadow: 0 3px 10px rgba(180, 150, 50, 0.3);
+    }
+    .btn-luxe::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.3) 50%, transparent 60%);
+      animation: shine 3s infinite;
+    }
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(25deg); }
+      100% { transform: translateX(100%) rotate(25deg); }
     }
 
     .bottom-nav {
@@ -439,19 +464,32 @@
       padding: 5px 8px;
       border-radius: 20px;
       flex: 1;
+      transition: all 0.3s ease;
     }
     .nav-item i {
       font-size: 1.5rem;
       color: #7b8f7b;
+      transition: all 0.3s ease;
+    }
+    .nav-item:hover {
+      transform: translateY(-3px);
+    }
+    .nav-item:active {
+      transform: scale(0.85);
     }
     .nav-item.active i {
       color: var(--emerald);
-      transform: scale(1.1);
+      transform: scale(1.15);
+      animation: bounce 0.5s ease;
     }
     .nav-item.active {
       background: rgba(10, 92, 74, 0.1);
       color: var(--emerald-dark);
       font-weight: 600;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: scale(1.15); }
+      50% { transform: scale(1.3); }
     }
 
     .profile-pic {
@@ -463,6 +501,15 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 0 20px rgba(212, 175, 55, 0.3);
       margin: 0 auto 12px;
       display: block;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .profile-pic:hover {
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 35px rgba(212, 175, 55, 0.5);
+    }
+    .profile-pic:active {
+      transform: scale(0.9) rotate(-3deg);
     }
 
     .profile-card {
@@ -473,6 +520,12 @@
       box-shadow: 0 12px 28px rgba(0,0,0,0.08);
       text-align: center;
       margin: 10px 0;
+      cursor: pointer;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .profile-card:active {
+      transform: translateY(-5px) scale(0.98);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
 
     .profile-name {
@@ -505,7 +558,14 @@
       justify-content: space-between;
       align-items: center;
       gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
+    .bank-box:active {
+      transform: scale(0.97);
+      background: #f5f9f0;
+    }
+
     .copy-btn {
       background: var(--emerald);
       color: white;
@@ -516,6 +576,47 @@
       cursor: pointer;
       font-size: 0.8rem;
       white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+    .copy-btn:active {
+      transform: scale(0.85);
+      background: var(--emerald-dark);
+    }
+
+    .gallery-item {
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    .gallery-item:active {
+      transform: scale(0.9);
+    }
+
+    .ucapan-item {
+      background: #fbfaf2;
+      border-radius: 16px;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #dccfa8;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      font-size: 0.9rem;
+      animation: slideIn 0.5s ease;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .ucapan-item:hover {
+      transform: translateX(5px);
+      border-color: var(--gold);
+    }
+    .ucapan-item:active {
+      transform: translateX(5px) scale(0.97);
+    }
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(-15px); }
+      100% { opacity: 1; transform: translateX(0); }
     }
 
     .toast {
@@ -527,6 +628,7 @@
       color: white;
       padding: 10px 20px;
       border-radius: 25px;
+      font-weight: 500;
       font-size: 0.85rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       z-index: 200;
@@ -547,14 +649,14 @@
     }
 
     @media (max-width: 360px) {
-      .welcome-photo-container { width: 160px; height: 160px; }
+      .welcome-photo-container { width: 220px; height: 220px; }
       .profile-pic { width: 110px; height: 110px; }
       .guest-name-display { font-size: 1.3rem; }
     }
 
     @media (min-width: 431px) {
       .phone-frame { border-radius: 40px; height: 85vh; max-height: 850px; }
-      .welcome-photo-container { width: 230px; height: 230px; }
+      .welcome-photo-container { width: 320px; height: 320px; }
     }
   </style>
 </head>
@@ -562,78 +664,64 @@
   <canvas id="particleCanvas"></canvas>
   
   <div class="phone-frame">
-    <!-- Tombol Musik -->
     <button class="music-toggle" id="musicToggle">
       <i class="fas fa-music" id="musicIcon"></i>
     </button>
 
-    <!-- Overlay Pembuka -->
     <div class="welcome-overlay" id="welcomeOverlay">
       <div class="welcome-icon">🕌</div>
-      
       <div class="welcome-photo-container">
-        <img src="https://i.pravatar.cc/600?img=32" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
+        <img src="https://i.pravatar.cc/800?img=32" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
       </div>
-      
       <div class="welcome-text">
         <span class="welcome-name">Sumandiyah</span>
         <span class="welcome-ampersand">&</span>
         <span class="welcome-name">Suheri</span>
       </div>
-      
       <div class="countdown-container">
         <div class="countdown-label">Menuju Hari Bahagia</div>
         <div class="countdown-timer" id="countdownTimer">
-          <div class="countdown-item">
+          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
             <span class="countdown-number" id="countdownDays">00</span>
             <span class="countdown-unit">Hari</span>
           </div>
           <span class="countdown-colon">:</span>
-          <div class="countdown-item">
+          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
             <span class="countdown-number" id="countdownHours">00</span>
             <span class="countdown-unit">Jam</span>
           </div>
           <span class="countdown-colon">:</span>
-          <div class="countdown-item">
+          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
             <span class="countdown-number" id="countdownMinutes">00</span>
             <span class="countdown-unit">Menit</span>
           </div>
           <span class="countdown-colon">:</span>
-          <div class="countdown-item">
+          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
             <span class="countdown-number" id="countdownSeconds">00</span>
             <span class="countdown-unit">Detik</span>
           </div>
         </div>
       </div>
-      
       <div class="welcome-sub">KETUK UNTUK MEMBUKA</div>
     </div>
 
     <div class="app-content" id="appContent">
-      <!-- COVER / HOME -->
+      <!-- HOME -->
       <div class="page active" id="homePage">
         <div class="card-luxe" style="text-align: center; margin-top: 10px;">
           <div style="font-size:1.5rem; color:var(--gold);">۞</div>
-          
           <div style="font-family:'Reem Kufi',serif; font-size:1.6rem; direction:rtl; color:var(--deep-teal);">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
-          
           <div style="font-size:0.95rem; letter-spacing:2px; color:var(--emerald);">BISMILLAHIRRAHMANIRRAHIM</div>
-          
           <div class="islamic-divider">۞</div>
-          
-          <!-- NAMA TAMU DENGAN TYPEWRITER EFFECT -->
-          <div class="guest-name-box">
+          <div class="guest-name-box" onclick="showToast('👤 Selamat datang, ' + document.getElementById('guestNameDisplay').textContent + '!')">
             <div class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</div>
-            <div class="guest-name-display" id="guestNameDisplay"></div>
-            <span class="typewriter-cursor" id="typewriterCursor"></span>
+            <div class="guest-name-display" id="guestNameDisplay">Tamu Undangan</div>
           </div>
-          
           <div style="display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; margin:8px 0;">
             <span style="font-family:'Amiri',serif; font-size:1.5rem; font-weight:700; color:var(--deep-teal);">Sumandiyah</span>
             <span style="font-size:1.2rem; color:var(--gold-dark);">&</span>
             <span style="font-family:'Amiri',serif; font-size:1.5rem; font-weight:700; color:var(--deep-teal);">Suheri</span>
           </div>
-          
           <div style="font-size:1.1rem; font-family:'Amiri',serif; margin:6px 0; color:#1a4d44;">Akad & Resepsi</div>
           <div style="font-style:italic; color:#5c5346; margin:8px 0 16px; font-size:0.9rem;">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..."</div>
           <button class="btn-luxe" id="openInvitationBtn"><i class="fas fa-envelope-open-text" style="margin-right:6px;"></i>Buka Undangan</button>
@@ -644,13 +732,13 @@
       <div class="page" id="profilePage">
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.6rem;">Mempelai</h2>
         <div class="islamic-divider"><i class="fas fa-mosque"></i></div>
-        <div class="profile-card">
+        <div class="profile-card" onclick="showToast('💚 Sumandiyah - Mempelai Wanita')">
           <img src="https://i.pravatar.cc/400?img=44" alt="Sumandiyah" class="profile-pic">
           <div class="profile-name">Sumandiyah</div>
           <div style="color:#665a45;">Putri dari Bpk. Ahmad & Ibu Fatimah</div>
         </div>
-        <div style="font-size:2rem; color:var(--gold); text-align:center;">۞</div>
-        <div class="profile-card">
+        <div style="font-size:2rem; color:var(--gold); text-align:center; cursor:pointer;" onclick="showToast('💛 Cinta menyatukan mereka')">۞</div>
+        <div class="profile-card" onclick="showToast('💚 Suheri - Mempelai Pria')">
           <img src="https://i.pravatar.cc/400?img=33" alt="Suheri" class="profile-pic">
           <div class="profile-name">Suheri</div>
           <div style="color:#665a45;">Putra dari Bpk. Umar & Ibu Khadijah</div>
@@ -661,7 +749,7 @@
       <div class="page" id="acaraPage">
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Rangkaian Acara</h2>
         <div class="islamic-divider"><i class="fas fa-star-and-crescent"></i></div>
-        <div class="card-luxe" style="margin:15px 0;">
+        <div class="card-luxe" style="margin:15px 0;" onclick="showToast('🕌 Akad Nikah - Minggu, 20 Des 2026')">
           <div style="display:flex; gap:12px; align-items:center;">
             <i class="fas fa-hands" style="font-size:1.5rem; color:var(--emerald);"></i>
             <div>
@@ -670,7 +758,7 @@
             </div>
           </div>
         </div>
-        <div class="card-luxe" style="margin-bottom:15px;">
+        <div class="card-luxe" style="margin-bottom:15px;" onclick="showToast('🎉 Resepsi - Minggu, 20 Des 2026')">
           <div style="display:flex; gap:12px; align-items:center;">
             <i class="fas fa-utensils" style="font-size:1.5rem; color:var(--emerald);"></i>
             <div>
@@ -680,13 +768,19 @@
           </div>
         </div>
         <button class="btn-luxe" id="saveDateBtn" style="margin-bottom:15px;"><i class="fas fa-calendar-check"></i> Simpan Tanggal</button>
-
-        <!-- MAP -->
-        <div class="map-container">
+        <div class="map-container" onclick="showToast('🗺️ Buka Google Maps untuk navigasi')">
           <div style="display:flex; align-items:center; gap:8px; background:rgba(10,92,74,0.1); padding:10px 14px; font-size:0.85rem; color:var(--emerald-dark);">
             <i class="fas fa-map-marker-alt"></i> Lokasi Acara
           </div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890!2d106.1234567890!3d-6.1234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDcnMjQuNCJTIDEwNsKwMDcnMjQuNCJF!5e0!3m2!1sid!2sid!4v1234567890" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div style="display:flex; gap:8px; padding:10px 14px; background:rgba(255,255,255,0.8);">
+            <a href="https://www.google.com/maps/search/?api=1&query=-6.1234567890,106.1234567890" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
+              <i class="fas fa-directions"></i> Petunjuk Arah
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Ikhlas" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
+              <i class="fas fa-external-link-alt"></i> Buka di Maps
+            </a>
+          </div>
         </div>
       </div>
 
@@ -695,24 +789,29 @@
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Galeri Bahagia</h2>
         <div class="islamic-divider"><i class="fas fa-camera"></i></div>
         <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px;">
-          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=47" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=24" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=7" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);"><img src="https://i.pravatar.cc/300?img=56" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Momen bahagia Sumandiyah & Suheri')"><img src="https://i.pravatar.cc/300?img=47" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Kenangan manis bersama')"><img src="https://i.pravatar.cc/300?img=24" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Senyum kebahagiaan')"><img src="https://i.pravatar.cc/300?img=7" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari bahagia')"><img src="https://i.pravatar.cc/300?img=56" style="width:100%; height:100%; object-fit:cover;"></div>
         </div>
+        <p style="text-align:center; font-style:italic; color:#6b6a5a; font-size:0.85rem;">✨ Klik foto untuk melihat detail ✨</p>
       </div>
 
       <!-- REKENING -->
       <div class="page" id="rekeningPage">
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Rekening Hadiah</h2>
         <div class="islamic-divider"><i class="fas fa-gift"></i></div>
-        <div class="bank-box">
+        <p style="text-align:center; margin-bottom:10px; font-size:0.9rem;">Semoga menjadi amal jariyah. Kirimkan tanda kasih melalui:</p>
+        <div class="bank-box" onclick="showToast('💳 Klik Salin untuk menyalin nomor rekening')">
           <div style="font-size:0.85rem;"><i class="fas fa-university" style="color:var(--emerald);"></i> <strong>BCA Syariah</strong> 1234567890<br><span style="font-size:0.75rem;">a.n Sumandiyah</span></div>
-          <button class="copy-btn" data-rek="1234567890">Salin</button>
+          <button class="copy-btn" data-rek="1234567890"><i class="fas fa-copy"></i> Salin</button>
         </div>
-        <div class="bank-box">
+        <div class="bank-box" onclick="showToast('💳 Klik Salin untuk menyalin nomor rekening')">
           <div style="font-size:0.85rem;"><i class="fas fa-wallet" style="color:var(--emerald);"></i> <strong>Mandiri Syariah</strong> 9876543210<br><span style="font-size:0.75rem;">a.n Suheri</span></div>
-          <button class="copy-btn" data-rek="9876543210">Salin</button>
+          <button class="copy-btn" data-rek="9876543210"><i class="fas fa-copy"></i> Salin</button>
+        </div>
+        <div style="margin-top:15px; text-align:center; background:#eef7e7; border-radius:16px; padding:10px; font-size:0.85rem; cursor:pointer;" onclick="showToast('🤲 Jazakumullah khairan katsiran')">
+          <i class="fas fa-pray" style="color:var(--emerald);"></i> Jazakumullah khairan katsiran
         </div>
       </div>
 
@@ -720,15 +819,20 @@
       <div class="page" id="ucapanPage">
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Ucapan & Doa</h2>
         <div class="islamic-divider"><i class="fas fa-comment-dots"></i></div>
-        <div style="background:#fbfaf2; border-radius:16px; padding:14px; margin:10px 0; border:1px solid #dccfa8;">
-          <strong>Bunda Ratna</strong> "Barakallahu lakuma. Selamat menempuh hidup baru."
+        <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Bunda Ratna')">
+          <strong>Bunda Ratna</strong> "Barakallahu lakuma wa baraka 'alaikuma. Selamat menempuh hidup baru."
         </div>
-        <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius:14px; border:1px solid #cbdbbe; font-family:'Jost',sans-serif; resize:none;"></textarea>
+        <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Kakak Aldi')">
+          <strong>Kakak Aldi</strong> "Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin."
+        </div>
+        <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Teman Kampus')">
+          <strong>Teman Kampus</strong> "Akhirnya halal! Bahagia selalu Sumandiyah & Suheri."
+        </div>
+        <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius:14px; border:1px solid #cbdbbe; font-family:'Jost',sans-serif; resize:none; margin-top:10px;"></textarea>
         <button class="btn-luxe" id="kirimUcapan" style="margin-top:8px; max-width:100%;"><i class="fas fa-paper-plane"></i> Kirim Ucapan</button>
       </div>
     </div>
 
-    <!-- BOTTOM NAVIGATION -->
     <div class="bottom-nav">
       <button class="nav-item active" data-page="homePage"><i class="fas fa-home"></i><span>Home</span></button>
       <button class="nav-item" data-page="profilePage"><i class="fas fa-user-friends"></i><span>Profil</span></button>
@@ -744,59 +848,38 @@
   </audio>
 
   <script>
+    // Global showToast function
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      setTimeout(() => { toast.remove(); }, 3000);
+    }
+
     (function() {
-      // ====== AMBIL NAMA TAMU DARI URL ======
+      // NAMA TAMU
       function getGuestName() {
         const urlParams = new URLSearchParams(window.location.search);
         const nama = urlParams.get('nama');
         return nama ? nama.replace(/\+/g, ' ') : 'Tamu Undangan';
       }
-      
-      const guestName = getGuestName();
-      
-      // ====== TYPEWRITER EFFECT ======
-      function typeWriterEffect(elementId, text, speed) {
-        const element = document.getElementById(elementId);
-        const cursor = document.getElementById('typewriterCursor');
-        let index = 0;
-        
-        function type() {
-          if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, speed);
-          } else {
-            // Selesai mengetik, kursor tetap berkedip
-            cursor.style.display = 'inline-block';
-          }
-        }
-        
-        // Mulai animasi setelah halaman dimuat
-        setTimeout(type, 1000);
-      }
-      
-      // Jalankan typewriter effect
-      typeWriterEffect('guestNameDisplay', guestName, 100);
+      document.getElementById('guestNameDisplay').textContent = getGuestName();
 
-      // ====== COUNTDOWN ======
+      // COUNTDOWN
       const weddingDate = new Date('2026-12-20T09:00:00+07:00');
-      
       function updateCountdown() {
         const diff = weddingDate - new Date();
         if (diff <= 0) return;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        document.getElementById('countdownDays').textContent = String(days).padStart(2, '0');
-        document.getElementById('countdownHours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('countdownMinutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('countdownSeconds').textContent = String(seconds).padStart(2, '0');
+        document.getElementById('countdownDays').textContent = String(Math.floor(diff / (1000*60*60*24))).padStart(2, '0');
+        document.getElementById('countdownHours').textContent = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2, '0');
+        document.getElementById('countdownMinutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2, '0');
+        document.getElementById('countdownSeconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2, '0');
       }
       updateCountdown();
       setInterval(updateCountdown, 1000);
 
-      // ====== NAVIGASI ======
+      // NAVIGASI
       const navButtons = document.querySelectorAll('.nav-item');
       const pages = document.querySelectorAll('.page');
       const appContent = document.getElementById('appContent');
@@ -813,28 +896,54 @@
       navButtons.forEach(btn => {
         btn.addEventListener('click', function() {
           showPage(this.getAttribute('data-page'));
+          showToast(`📄 ${this.querySelector('span')?.textContent || 'Halaman'}`);
         });
       });
 
       document.getElementById('openInvitationBtn').addEventListener('click', function() {
         showPage('profilePage');
+        showToast('🧕👳‍♂️ Mari berkenalan dengan mempelai');
       });
 
       document.getElementById('saveDateBtn').addEventListener('click', function() {
-        alert('📅 Acara disimpan! Kami tunggu kehadiran Anda.');
+        showToast('📅 Acara disimpan! Kami tunggu kehadiran Anda.');
       });
 
-      // ====== SALIN REKENING ======
+      // SALIN REKENING
       document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
           const rek = this.getAttribute('data-rek');
           navigator.clipboard.writeText(rek).then(() => {
-            alert('✅ Nomor rekening ' + rek + ' disalin!');
+            showToast('✅ Nomor rekening ' + rek + ' disalin!');
           });
         });
       });
 
-      // ====== MUSIK ======
+      // KIRIM UCAPAN
+      document.getElementById('kirimUcapan').addEventListener('click', function() {
+        const text = document.getElementById('ucapanInput').value.trim();
+        if (text === '') {
+          showToast('⚠️ Silakan tulis ucapan terlebih dahulu');
+          return;
+        }
+        const container = document.querySelector('#ucapanPage');
+        const newUcapan = document.createElement('div');
+        newUcapan.className = 'ucapan-item';
+        newUcapan.setAttribute('onclick', `showToast('💌 Ucapan dari Anda')`);
+        newUcapan.innerHTML = `<strong>Anda</strong> "${text.replace(/</g, '&lt;')}"`;
+        container.insertBefore(newUcapan, document.getElementById('ucapanInput'));
+        document.getElementById('ucapanInput').value = '';
+        showToast('💌 Ucapan terkirim! Jazakumullah khairan.');
+      });
+
+      // FOTO WELCOME
+      document.getElementById('welcomePhoto').addEventListener('click', function(e) {
+        e.stopPropagation();
+        showToast('🧕👳‍♂️ Sumandiyah & Suheri');
+      });
+
+      // MUSIK
       const bgMusic = document.getElementById('bgMusic');
       let isMusicPlaying = false;
       
@@ -846,21 +955,25 @@
         }).catch(() => {});
       }
       
-      document.getElementById('musicToggle').addEventListener('click', function() {
+      document.getElementById('musicToggle').addEventListener('click', function(e) {
+        e.stopPropagation();
         if (isMusicPlaying) {
           bgMusic.pause();
           isMusicPlaying = false;
           this.classList.remove('playing');
+          showToast('🔇 Musik dihentikan');
         } else {
           bgMusic.play().then(() => {
             isMusicPlaying = true;
             this.classList.add('playing');
+            showToast('🎵 Musik diputar');
           });
         }
       });
 
       document.getElementById('welcomeOverlay').addEventListener('click', function() {
         this.classList.add('hidden');
+        showToast('🕌 Selamat datang di undangan kami!');
         if (!isMusicPlaying) tryAutoPlay();
       });
 
@@ -869,7 +982,7 @@
         document.removeEventListener('click', firstClick);
       });
 
-      // ====== PARTIKEL ======
+      // PARTIKEL
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
       let particles = [];
