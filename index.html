@@ -106,6 +106,12 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 15px rgba(212, 175, 55, 0.3);
     }
 
+    .music-toggle:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+    .music-toggle:active {
+      transform: scale(0.85);
+    }
     .music-toggle.playing {
       animation: musicPulse 2s ease-in-out infinite;
       background: linear-gradient(135deg, var(--gold-dark), var(--gold));
@@ -114,7 +120,7 @@
 
     @keyframes musicPulse {
       0%, 100% { box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 15px rgba(212, 175, 55, 0.3); }
-      50% { box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 0 30px rgba(212, 175, 55, 0.7); }
+      50% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 35px rgba(212, 175, 55, 0.7); }
     }
 
     .welcome-overlay {
@@ -161,10 +167,17 @@
       margin-bottom: 15px;
       animation: fadeInUp 1s ease;
       cursor: pointer;
-      transition: all 0.4s ease;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
       position: relative;
       background: #fff;
       flex-shrink: 0;
+    }
+    .welcome-photo-container:hover {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 0 50px rgba(212, 175, 55, 0.8), 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+    .welcome-photo-container:active {
+      transform: scale(0.9);
     }
 
     .welcome-photo {
@@ -174,6 +187,7 @@
       display: block;
     }
 
+    /* Font pembuka tetap menggunakan Amiri */
     .welcome-text {
       font-family: 'Amiri', serif;
       font-size: 1.6rem;
@@ -192,6 +206,7 @@
     .welcome-name {
       display: inline-block;
       white-space: nowrap;
+      font-family: 'Amiri', serif;
     }
 
     .welcome-ampersand {
@@ -199,26 +214,47 @@
       color: var(--gold-dark);
       font-size: 1.3rem;
       margin: 0 3px;
+      animation: goldShimmer 2s ease-in-out infinite;
+      font-family: 'Amiri', serif;
+    }
+
+    @keyframes goldShimmer {
+      0%, 100% { text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+      50% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.8); }
+    }
+
+    .salam-arab {
+      font-family: 'Reem Kufi', 'Amiri', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--emerald-dark);
+      text-align: center;
+      direction: rtl;
+      margin-top: 8px;
+      letter-spacing: 0;
+      line-height: 1.6;
+      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+      animation: fadeInUp 1.5s ease;
     }
 
     .countdown-container {
-      margin: 12px 0 8px;
+      margin: 10px 0 6px;
       text-align: center;
       animation: fadeInUp 1.2s ease;
     }
 
     .countdown-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #8b7a5a;
       letter-spacing: 2px;
       font-weight: 500;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       text-transform: uppercase;
     }
 
     .countdown-timer {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
@@ -228,13 +264,16 @@
       background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 12px;
-      padding: 6px 4px;
-      min-width: 50px;
+      padding: 5px 4px;
+      min-width: 46px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       backdrop-filter: blur(5px);
       transition: all 0.3s ease;
       cursor: pointer;
+    }
+    .countdown-item:hover {
+      transform: translateY(-3px);
     }
     .countdown-item:active {
       transform: scale(0.9);
@@ -242,7 +281,7 @@
 
     .countdown-number {
       font-family: 'Jost', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--emerald);
       line-height: 1;
@@ -250,7 +289,7 @@
     }
 
     .countdown-unit {
-      font-size: 0.55rem;
+      font-size: 0.5rem;
       color: #8b7a5a;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -260,16 +299,16 @@
     }
 
     .countdown-colon {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--gold-dark);
       animation: pulse 1s ease-in-out infinite;
     }
 
     .welcome-sub {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #8b7a5a;
-      margin-top: 8px;
+      margin-top: 6px;
       letter-spacing: 3px;
       animation: fadeInOut 2s ease-in-out infinite;
       font-weight: 500;
@@ -348,11 +387,14 @@
       box-shadow: 0 12px 25px rgba(0,0,0,0.08);
       position: relative;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .card-luxe:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
     .card-luxe:active {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+      transform: translateY(-3px) scale(0.98);
     }
 
     .guest-name-box {
@@ -366,9 +408,12 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+    .guest-name-box:hover {
+      background: linear-gradient(135deg, rgba(10, 92, 74, 0.15), rgba(212, 175, 55, 0.25));
+      transform: scale(1.02);
+    }
     .guest-name-box:active {
       transform: scale(0.95);
-      background: linear-gradient(135deg, rgba(10, 92, 74, 0.15), rgba(212, 175, 55, 0.25));
     }
 
     .guest-label {
@@ -411,9 +456,12 @@
       position: relative;
       overflow: hidden;
     }
+    .btn-luxe:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(180, 150, 50, 0.7);
+    }
     .btn-luxe:active {
       transform: scale(0.92);
-      box-shadow: 0 3px 10px rgba(180, 150, 50, 0.3);
     }
     .btn-luxe::after {
       content: '';
@@ -455,6 +503,7 @@
       border-radius: 20px;
       flex: 1;
       transition: all 0.3s ease;
+      position: relative;
     }
     .nav-item i {
       font-size: 1.5rem;
@@ -471,11 +520,23 @@
       color: var(--emerald);
       transform: scale(1.15);
       animation: bounce 0.5s ease;
+      text-shadow: 0 0 15px rgba(10, 92, 74, 0.5);
     }
     .nav-item.active {
       background: rgba(10, 92, 74, 0.1);
       color: var(--emerald-dark);
       font-weight: 600;
+    }
+    .nav-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
     }
     @keyframes bounce {
       0%, 100% { transform: scale(1.15); }
@@ -513,9 +574,12 @@
       cursor: pointer;
       transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .profile-card:active {
-      transform: translateY(-5px) scale(0.98);
+    .profile-card:hover {
+      transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .profile-card:active {
+      transform: translateY(-3px) scale(0.97);
     }
 
     .profile-name {
@@ -531,11 +595,17 @@
       overflow: hidden;
       border: 2px solid var(--gold-light);
       box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .map-container:hover {
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
     .map-container iframe {
       width: 100%;
       height: 250px;
       border: none;
+      display: block;
     }
 
     .bank-box {
@@ -551,9 +621,12 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+    .bank-box:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    }
     .bank-box:active {
       transform: scale(0.97);
-      background: #f5f9f0;
     }
 
     .copy-btn {
@@ -568,9 +641,12 @@
       white-space: nowrap;
       transition: all 0.3s ease;
     }
+    .copy-btn:hover {
+      background: var(--emerald-dark);
+      transform: scale(1.05);
+    }
     .copy-btn:active {
       transform: scale(0.85);
-      background: var(--emerald-dark);
     }
 
     .gallery-item {
@@ -578,10 +654,64 @@
       transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .gallery-item:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
     .gallery-item:active {
       transform: scale(0.9);
+    }
+
+    .ucapan-form {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      border-radius: 20px;
+      padding: 16px;
+      margin-top: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    .ucapan-form:hover {
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+
+    .ucapan-form-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--emerald-dark);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    .input-label {
+      font-size: 0.75rem;
+      color: #665a45;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid #cbdbbe;
+      background: #fffdf7;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      resize: none;
+      outline: none;
+    }
+    .input-field:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+      background: #fff;
     }
 
     .ucapan-item {
@@ -599,6 +729,7 @@
     .ucapan-item:hover {
       transform: translateX(5px);
       border-color: var(--gold);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
     }
     .ucapan-item:active {
       transform: translateX(5px) scale(0.97);
@@ -642,6 +773,7 @@
       .welcome-photo-container { width: 160px; height: 160px; }
       .profile-pic { width: 110px; height: 110px; }
       .guest-name-display { font-size: 1.3rem; }
+      .salam-arab { font-size: 1rem; }
     }
 
     @media (min-width: 431px) {
@@ -660,33 +792,36 @@
 
     <div class="welcome-overlay" id="welcomeOverlay">
       <div class="welcome-icon">🕌</div>
-      <div class="welcome-photo-container">
-        <img src="Adat Jawa 3.png" alt="Foto Pengantin" class="welcome-photo" id="welcomePhoto">
+      <div class="welcome-photo-container" onclick="showToast('🧕👳‍♂️ Sumandiyah & Suheri')">
+        <img src="Adat Jawa 3.png" alt="Foto Pengantin" class="welcome-photo">
       </div>
       <div class="welcome-text">
         <span class="welcome-name">Sumandiyah</span>
         <span class="welcome-ampersand">&</span>
         <span class="welcome-name">Suheri</span>
       </div>
+      
+      <div class="salam-arab">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّهِ وَبَرَكَاتُهُ</div>
+      
       <div class="countdown-container">
         <div class="countdown-label">Menuju Hari Bahagia</div>
         <div class="countdown-timer" id="countdownTimer">
-          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
+          <div class="countdown-item" onclick="showToast('⏱️ Hari menuju pernikahan')">
             <span class="countdown-number" id="countdownDays">00</span>
             <span class="countdown-unit">Hari</span>
           </div>
           <span class="countdown-colon">:</span>
-          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
+          <div class="countdown-item" onclick="showToast('⏱️ Jam menuju pernikahan')">
             <span class="countdown-number" id="countdownHours">00</span>
             <span class="countdown-unit">Jam</span>
           </div>
           <span class="countdown-colon">:</span>
-          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
+          <div class="countdown-item" onclick="showToast('⏱️ Menit menuju pernikahan')">
             <span class="countdown-number" id="countdownMinutes">00</span>
             <span class="countdown-unit">Menit</span>
           </div>
           <span class="countdown-colon">:</span>
-          <div class="countdown-item" onclick="showToast('⏱️ Hitung mundur menuju pernikahan')">
+          <div class="countdown-item" onclick="showToast('⏱️ Detik menuju pernikahan')">
             <span class="countdown-number" id="countdownSeconds">00</span>
             <span class="countdown-unit">Detik</span>
           </div>
@@ -699,7 +834,7 @@
       <!-- HOME -->
       <div class="page active" id="homePage">
         <div class="card-luxe" style="text-align: center; margin-top: 10px;">
-          <div style="font-size:1.5rem; color:var(--gold); animation:shimmer 3s infinite;">۞</div>
+          <div style="font-size:1.5rem; color:var(--gold); animation:goldShimmer 2s infinite;">۞</div>
           <div style="font-family:'Reem Kufi',serif; font-size:1.6rem; direction:rtl; color:var(--deep-teal);">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
           <div style="font-size:0.95rem; letter-spacing:2px; color:var(--emerald);">BISMILLAHIRRAHMANIRRAHIM</div>
           <div class="islamic-divider">۞</div>
@@ -707,12 +842,17 @@
             <div class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</div>
             <div class="guest-name-display" id="guestNameDisplay">Tamu Undangan</div>
           </div>
+          
+          <!-- Akad & Resepsi -->
+          <div style="font-size:1.2rem; font-family:'Amiri',serif; margin:6px 0; color:#1a4d44;">Akad & Resepsi</div>
+          
+          <!-- Nama Sumandiyah & Suheri DI BAWAH Akad & Resepsi -->
           <div style="display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; margin:8px 0;">
             <span style="font-family:'Amiri',serif; font-size:1.5rem; font-weight:700; color:var(--deep-teal);">Sumandiyah</span>
-            <span style="font-size:1.2rem; color:var(--gold-dark);">&</span>
+            <span style="font-family:'Amiri',serif; font-size:1.2rem; color:var(--gold-dark);">&</span>
             <span style="font-family:'Amiri',serif; font-size:1.5rem; font-weight:700; color:var(--deep-teal);">Suheri</span>
           </div>
-          <div style="font-size:1.1rem; font-family:'Amiri',serif; margin:6px 0; color:#1a4d44;">Akad & Resepsi</div>
+          
           <div style="font-style:italic; color:#5c5346; margin:8px 0 16px; font-size:0.9rem;">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu..."</div>
           <button class="btn-luxe" id="openInvitationBtn"><i class="fas fa-envelope-open-text" style="margin-right:6px;"></i>Buka Undangan</button>
         </div>
@@ -722,16 +862,16 @@
       <div class="page" id="profilePage">
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.6rem;">Mempelai</h2>
         <div class="islamic-divider"><i class="fas fa-mosque"></i></div>
-        <div class="profile-card" onclick="showToast('💚 Sumandiyah - Mempelai Wanita')">
-          <img src="20250428_080349.jpg" alt="Sumandiyah" class="profile-pic" id="profilePic1">
+        <div class="profile-card" onclick="showToast('🧕 Sumandiyah - Mempelai Wanita')">
+          <img src="https://i.pravatar.cc/400?img=44" alt="Sumandiyah" class="profile-pic">
           <div class="profile-name">Sumandiyah, S.Pd.Gr.</div>
-          <div style="color:#665a45;">Putri dari Anak Pertama Bapak Purwanto (Almarhum) & Ibu Erniyati</div>
+          <div style="color:#665a45;">Putri Pertama dari Bapak Purwanto (Almarhum) & Ibu Erniyati</div>
         </div>
         <div style="font-size:2rem; color:var(--gold); text-align:center; cursor:pointer;" onclick="showToast('💛 Cinta menyatukan mereka')">۞</div>
-        <div class="profile-card" onclick="showToast('💚 Suheri - Mempelai Pria')">
-          <img src="MOOC.png" alt="Suheri" class="profile-pic" id="profilePic2">
+        <div class="profile-card" onclick="showToast('👳‍♂️ Suheri - Mempelai Pria')">
+          <img src="https://i.pravatar.cc/400?img=33" alt="Suheri" class="profile-pic">
           <div class="profile-name">Suheri, S.Pd.Gr.</div>
-          <div style="color:#665a45;">Putra dari anak Pertama Bapak Hamsar (Almarhum) & Ibu Sapurah</div>
+          <div style="color:#665a45;">Putra Pertama dari Bapak Hamsar (Almarhum) & Ibu Sapurah</div>
         </div>
       </div>
 
@@ -759,18 +899,10 @@
         </div>
         <button class="btn-luxe" id="saveDateBtn" style="margin-bottom:15px;"><i class="fas fa-calendar-check"></i> Simpan Tanggal</button>
         <div class="map-container" onclick="showToast('🗺️ Buka Google Maps untuk navigasi')">
-          <div style="display:flex; align-items:center; gap:8px; background:rgba(10,92,74,0.1); padding:10px 14px; font-size:0.85rem; color:var(--emerald-dark);">
-            <i class="fas fa-map-marker-alt"></i>Lokasi Acara - Desa Sari Makmur, Sp6, Jalur9
+          <div style="display:flex; align-items:center; gap:8px; background:rgba(10,92,74,0.1); padding:10px 14px; font-size:0.85rem;">
+            <i class="fas fa-map-marker-alt"></i> Lokasi Acara - Desa Sari Makmur, Sp6, Jalur9
           </div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2489.1425764600713!2d102.14956567850979!3d-0.0812150723408031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1788247065851!5m2!1sid!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          <div style="display:flex; gap:8px; padding:10px 14px; background:rgba(255,255,255,0.8);">
-            <a href="https://maps.app.goo.gl/L7EqC5Avj5oUA4jf7" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
-              <i class="fas fa-directions"></i> Petunjuk Arah
-            </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Jalur9No.2+SariMakmur+Kec.Pangkalanlesung" target="_blank" style="flex:1; padding:10px 8px; border-radius:12px; border:1px solid var(--gold-light); background:linear-gradient(135deg, var(--emerald), var(--emerald-dark)); color:white; font-weight:600; font-size:0.8rem; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
-              <i class="fas fa-external-link-alt"></i> Buka di Maps
-            </a>
-          </div>
         </div>
       </div>
 
@@ -779,11 +911,11 @@
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Galeri Bahagia</h2>
         <div class="islamic-divider"><i class="fas fa-camera"></i></div>
         <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px;">
-          <div class="gallery-item" data-caption="Momen bahagia Sumandiyah & Suheri" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Momen bahagia Sumandiyah & Suheri')"><img src="20260718_213732.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div class="gallery-item" data-caption="Kenangan manis bersama" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Kenangan manis bersama')"><img src="IMG-20260719-WA0001.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div class="gallery-item" data-caption="Senyum kebahagiaan" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Senyum kebahagiaan')"><img src="IMG-20260718-WA0019.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div class="gallery-item" data-caption="Menuju hari bahagia" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari bahagia')"><img src="IMG-20260719-WA0027.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
-          <div class="gallery-item" data-caption="Menuju hari bahagia" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari beautiful')"><img src="IMG-20260719-WA0027.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Momen bahagia Sumandiyah & Suheri')"><img src="20260718_213732.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Kenangan manis bersama')"><img src="IMG-20260719-WA0001.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Senyum kebahagiaan')"><img src="IMG-20260718-WA0019.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+          <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari bahagia')"><img src="IMG-20260719-WA0027.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
+           <div class="gallery-item" style="aspect-ratio:1/1; border-radius:18px; overflow:hidden; border:2px solid var(--gold-light);" onclick="showToast('🖼️ Menuju hari bahagia')"><img src="IMG-20260719-WA0027.jpg" style="width:100%; height:100%; object-fit:cover;"></div>
         </div>
         <p style="text-align:center; font-style:italic; color:#6b6a5a; font-size:0.85rem;">✨ Klik foto untuk melihat detail ✨</p>
       </div>
@@ -810,17 +942,26 @@
       <div class="page" id="ucapanPage">
         <h2 style="color:var(--emerald-dark); text-align:center; font-family:'Amiri',serif; font-size:1.5rem;">Ucapan & Doa</h2>
         <div class="islamic-divider"><i class="fas fa-comment-dots"></i></div>
-        <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Ustadz Sohabat')">
-          <strong>Gus Pirjon</strong> "Barakallahu lakuma wa baraka 'alaikuma. Selamat menempuh hidup baru."
+        <div id="ucapanList">
+          <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Gus Pirjon')">
+            <strong>Gus Pirjon</strong> "Barakallahu lakuma. Selamat menempuh hidup baru."
+          </div>
+          <div class="ucapan-item" onclick="showToast('💌 Ucapan dari Adik Paling Ganteng')">
+            <strong>Cak Imin</strong> "Semoga menjadi keluarga sakinah. Aamiin."
+          </div>
         </div>
-        <div class="ucapan-item" onclick="showToast('💌 Ucapan dari adik paling ganteng')">
-          <strong>Cak Imin (Suwandi)</strong> "Semoga menjadi keluarga sakinah, mawaddah, warahmah. Aamiin."
+        <div class="ucapan-form">
+          <div class="ucapan-form-title">💌 Tulis Ucapan & Doa</div>
+          <div class="input-group">
+            <label class="input-label">👤 Nama Anda</label>
+            <input type="text" id="ucapanNama" class="input-field" placeholder="Tulis nama Anda...">
+          </div>
+          <div class="input-group">
+            <label class="input-label">💬 Ucapan & Doa</label>
+            <textarea id="ucapanInput" rows="3" class="input-field" placeholder="Tulis ucapan..."></textarea>
+          </div>
+          <button class="btn-luxe" id="kirimUcapan" style="max-width:100%;">Kirim Ucapan</button>
         </div>
-        <div class="ucapan-item" onclick="showToast('💌 Ucapan dari ustadz')">
-          <strong>Gus Markuana</strong> "Akhirnya halal! Bahagia selalu Sumandiyah & Suheri."
-        </div>
-        <textarea id="ucapanInput" rows="2" placeholder="Tulis doa dan ucapan..." style="width:100%; padding:10px; border-radius:14px; border:1px solid #cbdbbe; font-family:'Jost',sans-serif; resize:none; margin-top:10px; transition:all 0.3s;"></textarea>
-        <button class="btn-luxe" id="kirimUcapan" style="margin-top:8px; max-width:100%;"><i class="fas fa-paper-plane"></i> Kirim Ucapan</button>
       </div>
     </div>
 
@@ -839,7 +980,6 @@
   </audio>
 
   <script>
-    // Global showToast function
     function showToast(message) {
       const toast = document.createElement('div');
       toast.className = 'toast';
@@ -849,7 +989,6 @@
     }
 
     (function() {
-      // NAMA TAMU
       function getGuestName() {
         const urlParams = new URLSearchParams(window.location.search);
         const nama = urlParams.get('nama');
@@ -857,7 +996,6 @@
       }
       document.getElementById('guestNameDisplay').textContent = getGuestName();
 
-      // COUNTDOWN
       const weddingDate = new Date('2026-12-20T09:00:00+07:00');
       function updateCountdown() {
         const diff = weddingDate - new Date();
@@ -870,7 +1008,6 @@
       updateCountdown();
       setInterval(updateCountdown, 1000);
 
-      // NAVIGASI
       const navButtons = document.querySelectorAll('.nav-item');
       const pages = document.querySelectorAll('.page');
       const appContent = document.getElementById('appContent');
@@ -897,47 +1034,37 @@
       });
 
       document.getElementById('saveDateBtn').addEventListener('click', function() {
-        showToast('📅 Acara disimpan! Kami tunggu kehadiran Anda.');
+        showToast('📅 Acara disimpan!');
       });
 
-      // SALIN REKENING
       document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
           const rek = this.getAttribute('data-rek');
           navigator.clipboard.writeText(rek).then(() => {
-            showToast('✅ Nomor rekening ' + rek + ' disalin!');
+            showToast('✅ Nomor rekening disalin!');
           });
         });
       });
 
-      // KIRIM UCAPAN
       document.getElementById('kirimUcapan').addEventListener('click', function() {
+        const nama = document.getElementById('ucapanNama').value.trim();
         const text = document.getElementById('ucapanInput').value.trim();
-        if (text === '') {
-          showToast('⚠️ Silakan tulis ucapan terlebih dahulu');
-          return;
-        }
-        const container = document.querySelector('#ucapanPage');
-        const newUcapan = document.createElement('div');
-        newUcapan.className = 'ucapan-item';
-        newUcapan.setAttribute('onclick', `showToast('💌 Ucapan dari Anda')`);
-        newUcapan.innerHTML = `<strong>Anda</strong> "${text.replace(/</g, '&lt;')}"`;
-        container.insertBefore(newUcapan, document.getElementById('ucapanInput'));
+        if (nama === '') { showToast('⚠️ Isi nama dulu'); return; }
+        if (text === '') { showToast('⚠️ Tulis ucapan dulu'); return; }
+        const list = document.getElementById('ucapanList');
+        const item = document.createElement('div');
+        item.className = 'ucapan-item';
+        item.setAttribute('onclick', `showToast('💌 Ucapan dari ${nama}')`);
+        item.innerHTML = `<strong>${nama}</strong> "${text}"`;
+        list.appendChild(item);
+        document.getElementById('ucapanNama').value = '';
         document.getElementById('ucapanInput').value = '';
-        showToast('💌 Ucapan terkirim! Jazakumullah khairan.');
+        showToast('💌 Ucapan terkirim!');
       });
 
-      // FOTO WELCOME
-      document.getElementById('welcomePhoto').addEventListener('click', function(e) {
-        e.stopPropagation();
-        showToast('🧕👳‍♂️ Sumandiyah & Suheri');
-      });
-
-      // MUSIK
       const bgMusic = document.getElementById('bgMusic');
       let isMusicPlaying = false;
-      
       function tryAutoPlay() {
         bgMusic.volume = 0.5;
         bgMusic.play().then(() => {
@@ -945,46 +1072,34 @@
           document.getElementById('musicToggle').classList.add('playing');
         }).catch(() => {});
       }
-      
       document.getElementById('musicToggle').addEventListener('click', function(e) {
         e.stopPropagation();
         if (isMusicPlaying) {
-          bgMusic.pause();
-          isMusicPlaying = false;
-          this.classList.remove('playing');
+          bgMusic.pause(); isMusicPlaying = false; this.classList.remove('playing');
           showToast('🔇 Musik dihentikan');
         } else {
-          bgMusic.play().then(() => {
-            isMusicPlaying = true;
-            this.classList.add('playing');
-            showToast('🎵 Musik diputar');
-          });
+          bgMusic.play().then(() => { isMusicPlaying = true; this.classList.add('playing'); showToast('🎵 Musik diputar'); });
         }
       });
-
       document.getElementById('welcomeOverlay').addEventListener('click', function() {
         this.classList.add('hidden');
         showToast('🕌 Selamat datang di undangan kami!');
         if (!isMusicPlaying) tryAutoPlay();
       });
-
       document.addEventListener('click', function firstClick() {
         if (!isMusicPlaying) tryAutoPlay();
         document.removeEventListener('click', firstClick);
       });
 
-      // PARTIKEL
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
       let particles = [];
-      
       function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       }
       window.addEventListener('resize', resizeCanvas);
       resizeCanvas();
-      
       for (let i = 0; i < 40; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -995,12 +1110,10 @@
           opacity: 0.25 + Math.random() * 0.6
         });
       }
-      
       function animateParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach(p => {
-          p.y += p.speedY;
-          p.x += p.speedX;
+          p.y += p.speedY; p.x += p.speedX;
           if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
           if (p.x < -10) p.x = canvas.width + 10;
           if (p.x > canvas.width + 10) p.x = -10;
